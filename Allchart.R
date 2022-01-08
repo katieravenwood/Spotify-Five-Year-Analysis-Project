@@ -31,10 +31,10 @@ allchart1 <- rename(allchart,
 allchart2 <- rename(gdata, Genre = 'New Genre')
 
 #merge data
-allchart3 <- merge(allchart1, allchart2, by.c =c('Track', 'Popularity', 'Artists','Artist_Pop', 'Explicit',
+allchart3 <- merge(allchart1, allchart2, by.c =c('Track', 'Popularity', 'Artists','Genre', 'Artist_Pop', 'Explicit',
                                               'Followers', 'Album', 'danceability', 'energy', 'key',
                                               'loudness', 'acousticness', 'instrumentalness', 'liveness',
-                                              'valence', 'tempo', 'Genre'), all.x=T)
+                                              'valence', 'tempo','Original', 'Genre'), all.x=T)
 allchart3
 
 allchart4 <- subset(allchart3, select = -c(Original_Genre))
