@@ -43,13 +43,40 @@ list(allchart5['Genre'])
 allchart5$Genre
 
 
+<<<<<<< Updated upstream
                     
+=======
+
+#### RUN THIS
+
+#data
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+
+##IMPORT
+#Main data set
+library(readr)
+allcharttracks <- read_csv("data/AllchartReMaster.csv")
+View(allcharttracks)
+
+#Merge both data sets
+## was going to merge but no need if using string replace 
+### updated csv has updated column names also
+
+#see all columns
+colnames(allcharttracks)
+
+
+
+>>>>>>> Stashed changes
 library(stringr)
-str_replace_all(allcharttracks[Genre], c("a cappella" = "Misc","hollywood" = "Misc", "country rock" = "Rock",
+str_replace_all(allcharttracks['Genre'], c("a cappella" = "Misc","hollywood" = "Misc", "country rock" = "Rock",
                              "k-pop boy group" = "Pop", "deep underground hip hop" =	"Hip-hop",
                              "post-grunge" =	"Rock","progressive electro house" = "Edm", "soft rock" =	"Rock",
                              "modern hard rock" =	"Rock", "kentucky hip hop" =	"Hip-hop", "dmv rap" =	"Hip-hop",
                              "art rock" =	"Rock"))
+<<<<<<< Updated upstream
                              
                              
                              
@@ -61,6 +88,11 @@ str_replace_all(allcharttracks[Genre], c("a cappella" = "Misc","hollywood" = "Mi
                              
                              
                              
+=======
+
+
+
+>>>>>>> Stashed changes
                              "vapor trap" =	"Hip-hop",
                              "seattle hip hop" =	"Hip-hop",
                              "merseybeat" =	"Pop",
