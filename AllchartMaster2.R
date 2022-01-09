@@ -1,7 +1,20 @@
+bs_updates
 ## IGNORE 
+=======
+#data
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+
+##IMPORT
+#Main data set
+library(readr)
+allcharttracks <- read_csv("data/AllchartReMaster.csv")
+allcharttracks
+main
 #Genre data set
 library(readr)
-gdata <- read_csv("Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/genre_wranglingcopy.csv")
+gdata <- read_csv("data/genre_wranglingcopy.csv")
 gdata
 #Remove column: gdata
 gdata1 <- subset(gdata, select = -c(X1, X2, X3))
@@ -12,7 +25,13 @@ gdata2 <- rename(gdata1,
                  Genre = 'New Genre')
 gdata2
 #write csv
+bs_updates
 write.csv(allchart5, "/Users/biancaabreu/Documents/GitHub/\\AllchartReMaster.csv", row.names = FALSE)
+=======
+write.csv(allchart5, "data/AllchartReMasterWorking.csv", row.names = FALSE)
+
+
+main
 ##explode coulmn to see all values
 #create tibble
 tibble(allchart5['replace_Genre'])
