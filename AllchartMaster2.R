@@ -1,3 +1,30 @@
+## IGNORE 
+#Genre data set
+library(readr)
+gdata <- read_csv("Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/genre_wranglingcopy.csv")
+gdata
+#Remove column: gdata
+gdata1 <- subset(gdata, select = -c(X1, X2, X3))
+gdata1
+#Rename columns: gdata
+gdata2 <- rename(gdata1, 
+                 Original = Original_Genre,
+                 Genre = 'New Genre')
+gdata2
+#write csv
+write.csv(allchart5, "/Users/biancaabreu/Documents/GitHub/\\AllchartReMaster.csv", row.names = FALSE)
+##explode coulmn to see all values
+#create tibble
+tibble(allchart5['replace_Genre'])
+#see list of values in row
+list(allchart5['Genre'])
+#see values in column
+allchart5$Genre
+
+
+
+#### RUN THIS
+
 #data
 library(dplyr)
 library(ggplot2)
@@ -8,20 +35,6 @@ library(tidyverse)
 library(readr)
 allcharttracks <- read_csv("Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/AllchartReMaster.csv")
 allcharttracks
-#Genre data set
-library(readr)
-gdata <- read_csv("Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/genre_wranglingcopy.csv")
-gdata
-
-#Remove column: gdata
-gdata1 <- subset(gdata, select = -c(X1, X2, X3))
-gdata1
-
-#Rename columns: gdata
-gdata2 <- rename(gdata1, 
-                 Original = Original_Genre,
-                 Genre = 'New Genre')
-gdata2
 
 #Merge both data sets
 ## was going to merge but no need if using string replace 
@@ -30,35 +43,13 @@ gdata2
 #see all columns
 colnames(allcharttracks)
 
-#write csv
-write.csv(allchart5, "/Users/biancaabreu/Documents/GitHub/\\AllchartReMaster.csv", row.names = FALSE)
 
-
-##explode coulmn to see all values
-#create tibble
-tibble(allchart5['replace_Genre'])
-#see list of values in row
-list(allchart5['Genre'])
-#see values in column
-allchart5$Genre
-
-
-                    
 library(stringr)
 str_replace_all(allcharttracks[Genre], c("a cappella" = "Misc","hollywood" = "Misc", "country rock" = "Rock",
                              "k-pop boy group" = "Pop", "deep underground hip hop" =	"Hip-hop",
                              "post-grunge" =	"Rock","progressive electro house" = "Edm", "soft rock" =	"Rock",
                              "modern hard rock" =	"Rock", "kentucky hip hop" =	"Hip-hop", "dmv rap" =	"Hip-hop",
                              "art rock" =	"Rock"))
-                             
-                             
-                             
-                            
-                             
-                             
-                            
-                             
-                             
                              
                              
                              "vapor trap" =	"Hip-hop",
