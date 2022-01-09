@@ -6,11 +6,11 @@ library(tidyverse)
 ##IMPORT
 #Main data set
 library(readr)
-allcharttracks <- read_csv("Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/AllchartReMaster.csv")
+allcharttracks <- read_csv("data/AllchartReMaster.csv")
 allcharttracks
 #Genre data set
 library(readr)
-gdata <- read_csv("Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/genre_wranglingcopy.csv")
+gdata <- read_csv("data/genre_wranglingcopy.csv")
 gdata
 
 #Remove column: gdata
@@ -31,7 +31,7 @@ gdata2
 colnames(allcharttracks)
 
 #write csv
-write.csv(allchart5, "/Users/biancaabreu/Documents/GitHub/\\AllchartReMaster.csv", row.names = FALSE)
+write.csv(allchart5, "data/AllchartReMasterWorking.csv", row.names = FALSE)
 
 
 ##explode coulmn to see all values
