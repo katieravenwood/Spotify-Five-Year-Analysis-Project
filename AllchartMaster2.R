@@ -1,3 +1,6 @@
+bs_updates
+## IGNORE 
+=======
 #data
 library(dplyr)
 library(ggplot2)
@@ -8,32 +11,27 @@ library(tidyverse)
 library(readr)
 allcharttracks <- read_csv("data/AllchartReMaster.csv")
 allcharttracks
+main
 #Genre data set
 library(readr)
 gdata <- read_csv("data/genre_wranglingcopy.csv")
 gdata
-
 #Remove column: gdata
 gdata1 <- subset(gdata, select = -c(X1, X2, X3))
 gdata1
-
 #Rename columns: gdata
 gdata2 <- rename(gdata1, 
                  Original = Original_Genre,
                  Genre = 'New Genre')
 gdata2
-
-#Merge both data sets
-## was going to merge but no need if using string replace 
-### updated csv has updated column names also
-
-#see all columns
-colnames(allcharttracks)
-
 #write csv
+bs_updates
+write.csv(allchart5, "/Users/biancaabreu/Documents/GitHub/\\AllchartReMaster.csv", row.names = FALSE)
+=======
 write.csv(allchart5, "data/AllchartReMasterWorking.csv", row.names = FALSE)
 
 
+main
 ##explode coulmn to see all values
 #create tibble
 tibble(allchart5['replace_Genre'])
@@ -43,22 +41,34 @@ list(allchart5['Genre'])
 allchart5$Genre
 
 
-                    
+
+#### RUN THIS
+
+#data
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+
+##IMPORT
+#Main data set
+library(readr)
+allcharttracks <- read_csv("Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/AllchartReMaster.csv")
+allcharttracks
+
+#Merge both data sets
+## was going to merge but no need if using string replace 
+### updated csv has updated column names also
+
+#see all columns
+colnames(allcharttracks)
+
+
 library(stringr)
 str_replace_all(allcharttracks[Genre], c("a cappella" = "Misc","hollywood" = "Misc", "country rock" = "Rock",
                              "k-pop boy group" = "Pop", "deep underground hip hop" =	"Hip-hop",
                              "post-grunge" =	"Rock","progressive electro house" = "Edm", "soft rock" =	"Rock",
                              "modern hard rock" =	"Rock", "kentucky hip hop" =	"Hip-hop", "dmv rap" =	"Hip-hop",
                              "art rock" =	"Rock"))
-                             
-                             
-                             
-                            
-                             
-                             
-                            
-                             
-                             
                              
                              
                              "vapor trap" =	"Hip-hop",
