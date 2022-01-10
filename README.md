@@ -10,14 +10,14 @@ A collaborative project of Bianca Serrano and Katie Ravenwood.
 
 The dataset was created via Python using Spotify's public API and playlists created based on the Billboard Top 200 Albums charts for 2017-2021. 
 
-Spotify Playllists: 
-[Billboard 200 Top Albums 2017](https://open.spotify.com/playlist/1N9WQ0C6m7n1TVeLXdUoNb)
-[Billboard 200 Top Albums 2018](https://open.spotify.com/playlist/34KSLHLGSNqeK6UfxKnLuM)
-[Billboard 200 Top Albums 2019](https://open.spotify.com/playlist/0n3V7u9sMRV7sCDMhWxDtL)
-[Billboard 200 Top Albums 2020](https://open.spotify.com/playlist/1EEazdcjH0keT4sttGvH8c)
+#### Spotify Playllists:
+[Billboard 200 Top Albums 2017](https://open.spotify.com/playlist/1N9WQ0C6m7n1TVeLXdUoNb)<br />
+[Billboard 200 Top Albums 2018](https://open.spotify.com/playlist/34KSLHLGSNqeK6UfxKnLuM)<br />
+[Billboard 200 Top Albums 2019](https://open.spotify.com/playlist/0n3V7u9sMRV7sCDMhWxDtL)<br />
+[Billboard 200 Top Albums 2020](https://open.spotify.com/playlist/1EEazdcjH0keT4sttGvH8c)<br />
 [Billboard 200 Top Albums 2021](https://open.spotify.com/playlist/3avCwQPH6DkhMTRsizon7N)
 
-Included variables:
+#### Included variables:
 - Billboard Album Chart Name & Year
 - Album ID, Name, Release Year
 - Album artists and album artist IDs
@@ -25,7 +25,7 @@ Included variables:
 - Explicit designation
 - Audio features
 
-Dataset creation notebooks:
-[Master Chart Table Creation](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/main/notebooks/Master_Chart_Table_Creation.ipynb)
+#### Dataset creation notebooks:
+[Master Chart Table Creation](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/main/notebooks/Master_Chart_Table_Creation.ipynb)<br />
 [All Album Track Table Creation](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/main/notebooks/All_Album_Track_Table_Creation.ipynb)
 
