@@ -3,12 +3,12 @@
 
 #Import data
 library(readr)
-allchartalbumtracks2 <- read_csv("Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/allchartalbumtracks2.csv")
+allchartalbumtracks2 <- read_csv("../data/allchartalbumtracks2.csv")
 allchartalbumtracks2
 
 #import genre changes
 library(readr)
-gdata <- read_csv("Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/genre_wrangling.csv")
+gdata <- read_csv("../data/genre_wrangling.csv")
 gdata
 
 #Drop unnecessary columns
