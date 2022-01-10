@@ -20,3 +20,10 @@ __pycache__/secret.cpython-38.pyc
 .ipynb_checkpoints/GenreWrangling-checkpoint.ipynb
 .ipynb_checkpoints/GenreExplosion-checkpoint.ipynb
 .ipynb_checkpoints/GenreExplosion-checkpoint.ipynb
+notebooks/__pycache__/creds.cpython-38.pyc
+notebooks/.ipynb_checkpoints/All_Album_Track_Table_Creation-checkpoint.ipynb
+notebooks/.ipynb_checkpoints/AllChartAlbumTracksWrangled_1-checkpoint.ipynb
+notebooks/.ipynb_checkpoints/GenreExplosion-checkpoint.ipynb
+notebooks/.ipynb_checkpoints/GenreWrangling-checkpoint.ipynb
+notebooks/.ipynb_checkpoints/GenreWrangling2-checkpoint.ipynb
+notebooks/.ipynb_checkpoints/Master_Chart_Table_Creation-checkpoint.ipynb

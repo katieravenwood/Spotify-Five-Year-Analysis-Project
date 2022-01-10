@@ -2,7 +2,7 @@
 
 # Import primary data table
 library(readr)
-allchartalbumtracks <- read_csv("data/allchartalbumtracks.csv")
+allchartalbumtracks <- read_csv("../data/allchartalbumtracks.csv")
 View(allchartalbumtracks)
 
 # Rename  unnamed first index column
@@ -40,7 +40,7 @@ for (col in cols) {
 }
 
 # separate rows is the closest I've come but I still need to work on the
-# separator syntax so it doesnt automatically separate at first and last names
+# separator syntax so it doesn't automatically separate at first and last names
 # xD
 
 # Testing for possibilities on how to return the contents of a cell so it's

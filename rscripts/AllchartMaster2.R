@@ -6,11 +6,11 @@ library(tidyverse)
 ##IMPORT
 #Main data set
 library(readr)
-allcharttracks <- read_csv("Desktop/AllchartReMastercopy.csv")
+allcharttracks <- read_csv("../data/AllchartReMastercopy.csv")
 allcharttracks
 #Genre data set
 library(readr)
-gdata <- read_csv("Desktop/genre_wranglingcopy.csv")
+gdata <- read_csv("../data/genre_wranglingcopy.csv")
 gdata
 
 #Remove column: gdata

@@ -6,11 +6,11 @@ library(tidyverse)
 ##IMPORT
 #Main data set
 library(readr)
-allchartalbumtracks2 <- read_csv("Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/allchartalbumtracks2.csv")
+allchartalbumtracks2 <- read_csv("../data/allchartalbumtracks2.csv")
 allchartalbumtracks2
 #Genre data set
 library(readr)
-gdata <- read_csv("Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/genre_wrangling.csv")
+gdata <- read_csv("../data/genre_wrangling.csv")
 gdata
 
 #Drop unnecessary columns: main
