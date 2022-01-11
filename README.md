@@ -7,7 +7,7 @@ For completion of the Final Project requirement of the Entity Academy / Woz-U Da
 A collaborative project of Bianca Serrano and Katie Ravenwood.
 
 ## Phase 1: Dataset Creation 
-###(Completed 12/27/22)
+### (Completed 12/27/22)
 
 The dataset was created via Python using Spotify's public API and playlists created based on the Billboard Top 200 Albums charts for 2017-2021. 
 
@@ -31,3 +31,5 @@ The dataset was created via Python using Spotify's public API and playlists crea
 [All Album Track Table Creation](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/main/notebooks/All_Album_Track_Table_Creation.ipynb)
 
 ## Phase 2: Wrangling and Exploration (In Progress)
+- Recoding of nested variables
+- Exploratory analysis
