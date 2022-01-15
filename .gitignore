@@ -1,32 +1,7 @@
 
 creds.py
-.ipynb_checkpoints/DataScraping-checkpoint.ipynb
-.DS_Store
-.cache
-__pycache__/ari.cpython-38.pyc
-__pycache__/creds.cpython-38.pyc
-__pycache__/secret.cpython-38.pyc
+.ipynb_checkpoints/
 ~$Master Chart Data.xlsx
-.ipynb_checkpoints/DataScrapingSandbox-checkpoint.ipynb
-.ipynb_checkpoints/Dataset_Creation-checkpoint.ipynb
-.ipynb_checkpoints/DataScrapingSandbox-checkpoint.ipynb
-.ipynb_checkpoints/Master_Chart_Table_Creation-checkpoint.ipynb
-.ipynb_checkpoints/All_Album_Track_Table_Creation-checkpoint.ipynb
 .Rhistory
-.ipynb_checkpoints/DataScrapingSandbox-checkpoint.ipynb
-.ipynb_checkpoints/DataScrapingSandbox-checkpoint.ipynb
-.ipynb_checkpoints/DataScrapingSandbox-checkpoint.ipynb
-.ipynb_checkpoints/DataScrapingSandbox-checkpoint.ipynb
-.ipynb_checkpoints/GenreWrangling-checkpoint.ipynb
-.ipynb_checkpoints/GenreExplosion-checkpoint.ipynb
-.ipynb_checkpoints/GenreExplosion-checkpoint.ipynb
-notebooks/__pycache__/creds.cpython-38.pyc
-notebooks/.ipynb_checkpoints/All_Album_Track_Table_Creation-checkpoint.ipynb
-notebooks/.ipynb_checkpoints/AllChartAlbumTracksWrangled_1-checkpoint.ipynb
-notebooks/.ipynb_checkpoints/GenreExplosion-checkpoint.ipynb
-notebooks/.ipynb_checkpoints/GenreWrangling-checkpoint.ipynb
-notebooks/.ipynb_checkpoints/GenreWrangling2-checkpoint.ipynb
-notebooks/.ipynb_checkpoints/Master_Chart_Table_Creation-checkpoint.ipynb
+notebooks/.ipynb_checkpoints/
 rscripts/.RData
-notebooks/.ipynb_checkpoints/Wrangling11Jan22Commented-checkpoint.ipynb
-notebooks/.ipynb_checkpoints/ListCleaning-checkpoint.ipynb
