@@ -5,3 +5,8 @@ creds.py
 .Rhistory
 notebooks/.ipynb_checkpoints/
 rscripts/.RData
+.cache
+.DS_Store
+data/.DS_Store
+notebooks/__pycache__/creds.cpython-38.pyc
+rscripts/.DS_Store
