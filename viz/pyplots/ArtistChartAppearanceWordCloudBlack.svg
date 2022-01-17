@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400">
+<style>@font-face{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;src:url("data:application/font-woff;charset=utf-8;base64,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")format("woff");}</style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:black"></rect>
+<text transform="translate(300,148)" font-size="165" style="fill:rgb(39, 126, 142)">Drake</text>
+<text transform="translate(2,326)" font-size="120" style="fill:rgb(34, 168, 132)">Post Malone</text>
+<text transform="translate(265,217)" font-size="88" style="fill:rgb(66, 63, 133)">The Weeknd</text>
+<text transform="translate(51,373)" font-size="60" style="fill:rgb(72, 37, 118)">Taylor Swift</text>
+<text transform="translate(482,374)" font-size="37" style="fill:rgb(72, 23, 105)">Kendrick Lamar</text>
+<text transform="translate(74,241)" font-size="37" style="fill:rgb(30, 157, 137)">Eminem</text>
+<text transform="translate(207,18)" font-size="22" style="fill:rgb(234, 229, 26)">YoungBoy Never Broke Again</text>
+<text transform="translate(154,62)" font-size="21" style="fill:rgb(134, 213, 73)">The Beatles</text>
+<text transform="translate(385,39)" font-size="20" style="fill:rgb(30, 156, 137)">XXXTENTACION</text>
+<text transform="translate(637,233)" font-size="20" style="fill:rgb(30, 155, 138)">Ed Sheeran</text>
+<text transform="translate(140,97)" font-size="20" style="fill:rgb(32, 164, 134)">J. Cole</text>
+<text transform="translate(261,293)" font-size="20" style="fill:rgb(184, 222, 41)">Lil Baby</text>
+<text transform="translate(431,390)" font-size="19" style="fill:rgb(31, 151, 139)">Future</text>
+<text transform="translate(164,140)" font-size="19" style="fill:rgb(38, 130, 142)">Ariana Grande</text>
+<text transform="translate(36,184)" font-size="19" style="fill:rgb(124, 210, 80)">Imagine Dragons</text>
+<text transform="translate(662,39)" font-size="18" style="fill:rgb(117, 208, 84)">Juice WRLD</text>
+<text transform="translate(103,133) rotate(-90)" font-size="18" style="fill:rgb(92, 200, 99)">Travis Scott</text>
+<text transform="translate(115,115)" font-size="18" style="fill:rgb(31, 162, 135)">Twenty One Pilots</text>
+<text transform="translate(63,208)" font-size="18" style="fill:rgb(51, 99, 141)">Michael Jackson</text>
+<text transform="translate(103,153)" font-size="18" style="fill:rgb(70, 48, 126)">BTS</text>
+<text transform="translate(554,388)" font-size="18" style="fill:rgb(216, 226, 25)">Chris Stapleton</text>
+<text transform="translate(12,388)" font-size="18" style="fill:rgb(40, 174, 128)">Bruno Mars</text>
+<text transform="translate(662,20)" font-size="18" style="fill:rgb(168, 219, 52)">Khalid</text>
+<text transform="translate(618,341)" font-size="18" style="fill:rgb(127, 211, 78)">Lil Uzi Vert</text>
+<text transform="translate(609,254)" font-size="18" style="fill:rgb(68, 58, 131)">Billie Eilish</text>
+<text transform="translate(129,34)" font-size="17" style="fill:rgb(36, 170, 131)">Luke Combs</text>
+<text transform="translate(599,100) rotate(-90)" font-size="17" style="fill:rgb(37, 172, 130)">Sam Smith</text>
+<text transform="translate(342,231)" font-size="17" style="fill:rgb(71, 14, 97)">Shawn Mendes</text>
+<text transform="translate(245,389)" font-size="17" style="fill:rgb(63, 71, 136)">Kanye West</text>
+<text transform="translate(277,254)" font-size="16" style="fill:rgb(40, 174, 128)">DaBaby</text>
+<text transform="translate(136,169)" font-size="16" style="fill:rgb(31, 148, 140)">Thomas Rhett</text>
+<text transform="translate(643,55) rotate(-90)" font-size="16" style="fill:rgb(178, 221, 45)">Adele</text>
+<text transform="translate(70,254)" font-size="16" style="fill:rgb(36, 135, 142)">Pentatonix</text>
+<text transform="translate(164,389)" font-size="16" style="fill:rgb(30, 157, 137)">Queen</text>
+<text transform="translate(643,54)" font-size="16" style="fill:rgb(71, 45, 123)">Fleetwood Mac</text>
+<text transform="translate(483,339)" font-size="15" style="fill:rgb(105, 205, 91)">Kane Brown</text>
+<text transform="translate(210,189)" font-size="15" style="fill:rgb(71, 44, 122)">Logic</text>
+<text transform="translate(117,78)" font-size="15" style="fill:rgb(35, 137, 142)">Zac Brown Band</text>
+<text transform="translate(2,164)" font-size="15" style="fill:rgb(31, 162, 135)">Chris Brown</text>
+<text transform="translate(354,161)" font-size="15" style="fill:rgb(34, 139, 141)">Trippie Redd</text>
+<text transform="translate(552,230)" font-size="15" style="fill:rgb(46, 179, 124)">Bad Bunny</text>
+<text transform="translate(10,99)" font-size="15" style="fill:rgb(54, 92, 141)">Halsey</text>
+<text transform="translate(4,73)" font-size="15" style="fill:rgb(40, 124, 142)">21 Savage</text>
+<text transform="translate(397,51)" font-size="14" style="fill:rgb(44, 114, 142)">Tyler, The Creator</text>
+<text transform="translate(304,317)" font-size="14" style="fill:rgb(39, 173, 129)">NF</text>
+<text transform="translate(236,234)" font-size="14" style="fill:rgb(78, 195, 107)">Michael Bublé</text>
+<text transform="translate(138,147)" font-size="10" style="fill:rgb(82, 197, 105)">A Boogie Wit da Hoodie</text>
+<text transform="translate(462,238)" font-size="10" style="fill:rgb(72, 23, 105)">Lady Gaga</text>
+<text transform="translate(153,41)" font-size="10" style="fill:rgb(68, 58, 131)">Metallica</text>
+<text transform="translate(34,34)" font-size="10" style="fill:rgb(47, 108, 142)">Polo G</text>
+<text transform="translate(712,160)" font-size="9" style="fill:rgb(55, 184, 120)">Bryson Tiller</text>
+<text transform="translate(20,21)" font-size="9" style="fill:rgb(84, 197, 104)">Lana Del Rey</text>
+<text transform="translate(148,215)" font-size="9" style="fill:rgb(42, 176, 127)">Red Hot Chili Peppers</text>
+<text transform="translate(4,215)" font-size="9" style="fill:rgb(48, 106, 142)">Mac Miller</text>
+<text transform="translate(128,16)" font-size="9" style="fill:rgb(110, 206, 88)">Auli'i Cravalho</text>
+<text transform="translate(609,107) rotate(-90)" font-size="9" style="fill:rgb(63, 188, 115)">Leslie Odom Jr.</text>
+<text transform="translate(498,301)" font-size="9" style="fill:rgb(192, 223, 37)">Journey</text>
+<text transform="translate(447,110)" font-size="9" style="fill:rgb(53, 183, 121)">Rod Wave</text>
+<text transform="translate(700,159) rotate(-90)" font-size="9" style="fill:rgb(43, 117, 142)">The Notorious B.I.G.</text>
+<text transform="translate(586,395)" font-size="9" style="fill:rgb(71, 17, 100)">SZA</text>
+<text transform="translate(10,342)" font-size="9" style="fill:rgb(216, 226, 25)">Young Thug</text>
+<text transform="translate(555,42) rotate(-90)" font-size="9" style="fill:rgb(129, 211, 77)">Rihanna</text>
+<text transform="translate(599,292)" font-size="9" style="fill:rgb(103, 204, 92)">Migos</text>
+<text transform="translate(471,213) rotate(-90)" font-size="9" style="fill:rgb(54, 93, 141)">Florida Georgia Line</text>
+<text transform="translate(245,95)" font-size="9" style="fill:rgb(101, 203, 94)">Tom Petty</text>
+<text transform="translate(88,335)" font-size="9" style="fill:rgb(30, 157, 137)">Blake Shelton</text>
+<text transform="translate(1,396)" font-size="9" style="fill:rgb(38, 173, 129)">Creedence Clearwater Revival</text>
+<text transform="translate(442,89)" font-size="9" style="fill:rgb(50, 182, 122)">Bob Marley &amp; The Wailers</text>
+<text transform="translate(326,84)" font-size="9" style="fill:rgb(39, 173, 129)">Pop Smoke</text>
+<text transform="translate(171,255)" font-size="9" style="fill:rgb(50, 101, 142)">Frank Ocean</text>
+<text transform="translate(240,196)" font-size="9" style="fill:rgb(124, 210, 80)">2Pac</text>
+<text transform="translate(46,230)" font-size="9" style="fill:rgb(31, 161, 136)">AC/DC</text>
+<text transform="translate(272,301)" font-size="8" style="fill:rgb(53, 183, 121)">Summer Walker</text>
+<text transform="translate(759,251)" font-size="8" style="fill:rgb(65, 66, 135)">NAV</text>
+<text transform="translate(244,31)" font-size="8" style="fill:rgb(69, 55, 129)">Kodak Black</text>
+<text transform="translate(13,196)" font-size="8" style="fill:rgb(59, 81, 139)">H.E.R.</text>
+<text transform="translate(351,380)" font-size="8" style="fill:rgb(44, 177, 126)">Playboi Carti</text>
+<text transform="translate(282,325)" font-size="8" style="fill:rgb(152, 216, 62)">Carrie Underwood</text>
+<text transform="translate(26,41)" font-size="8" style="fill:rgb(68, 57, 131)">Justin Bieber</text>
+<text transform="translate(110,133) rotate(-90)" font-size="8" style="fill:rgb(45, 113, 142)">Nirvana</text>
+<text transform="translate(21,129)" font-size="8" style="fill:rgb(55, 184, 120)">Linkin Park</text>
+<text transform="translate(795,382) rotate(-90)" font-size="8" style="fill:rgb(129, 211, 77)">Panic! At The Disco</text>
+<text transform="translate(247,365)" font-size="8" style="fill:rgb(70, 10, 93)">Tory Lanez</text>
+<text transform="translate(22,147)" font-size="8" style="fill:rgb(52, 182, 121)">Luke Bryan</text>
+<text transform="translate(19,9)" font-size="8" style="fill:rgb(47, 107, 142)">Harry Styles</text>
+<text transform="translate(431,253)" font-size="8" style="fill:rgb(155, 217, 60)">Kevin Gates</text>
+<text transform="translate(209,43)" font-size="8" style="fill:rgb(66, 65, 134)">DJ Khaled</text>
+<text transform="translate(217,395)" font-size="8" style="fill:rgb(99, 203, 95)">Sam Hunt</text>
+<text transform="translate(658,395)" font-size="8" style="fill:rgb(32, 146, 140)">Five Finger Death Punch</text>
+<text transform="translate(27,54)" font-size="8" style="fill:rgb(42, 118, 142)">Cardi B</text>
+<text transform="translate(796,190) rotate(-90)" font-size="8" style="fill:rgb(72, 32, 113)">Keala Settle</text>
+<text transform="translate(741,18)" font-size="8" style="fill:rgb(70, 51, 127)">Gunna</text>
+<text transform="translate(419,173)" font-size="8" style="fill:rgb(46, 110, 142)">Lil Durk</text>
+<text transform="translate(288,268)" font-size="8" style="fill:rgb(69, 53, 129)">Meek Mill</text>
+<text transform="translate(238,204)" font-size="8" style="fill:rgb(80, 196, 106)">Bob Seger</text>
+<text transform="translate(530,164)" font-size="8" style="fill:rgb(61, 77, 138)">Morgan Wallen</text>
+<text transform="translate(731,122)" font-size="8" style="fill:rgb(173, 220, 48)">Lauren Daigle</text>
+<text transform="translate(718,382)" font-size="8" style="fill:rgb(55, 91, 141)">Jason Aldean</text>
+<text transform="translate(366,391)" font-size="8" style="fill:rgb(51, 99, 141)">Elton John</text>
+<text transform="translate(225,121)" font-size="8" style="fill:rgb(72, 33, 115)">Guns N' Roses</text>
+</svg>
