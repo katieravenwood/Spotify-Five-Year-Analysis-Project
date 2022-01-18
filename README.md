@@ -1,6 +1,6 @@
 # Spotify x Billboard Five Year Analysis Project
 
-<img src="https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/08d087aebaad52a0a9e5331e3c639f6715632d4f/viz/pyplots/ChartAppearanceWordCloudBlack.png">
+<img src="https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/e16eff25504ca7e63c8d86aaecfc865c4bf5e127/viz/pyplots/ChartAppearanceWordCloudBlack.jpg">
 
 Analysis of Spotify music statistics and characteristics for the most popular tracks, artists, and albums from 2017-2021, as determined by Billboard year-end Top Album charts. 
 
