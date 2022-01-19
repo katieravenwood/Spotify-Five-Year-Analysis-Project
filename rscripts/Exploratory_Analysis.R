@@ -41,19 +41,26 @@ class(MasterC2)
 #can be done all at one with dimension
 dim(MasterC2)
 
-# Converting duration to minutes: 1
-MasterC3 <- MasterC2 %>% mutate(duration_mins = duration_ms/60)
+# mutate to get minutes
+MasterC3 <- MasterC2 %>% mutate(duration_mins = duration_ms/60000)
 View(MasterC3)
-# attempting to simplify minutes
-MasterC4 <- MasterC3 %>% mutate(duration.m = duration_mins/60)
-# View updated data set
-View(MasterC4)
+# to get album minutes sum up by album id
 
 # Checking Head/Tail of data / setting second argument to 15 to observe first and last 15 rows of data
 # head 
 View(head(MasterC4, 15))
 # tail
 View(tail(MasterC4, 15))
+
+
+
+
+# Checking Head/Tail of data / setting second argument to 15 to observe first and last 15 rows of data
+# head 
+View(head(MasterC3, 15))
+# tail
+View(tail(MasterC3, 15))
+
 
 
 
@@ -127,6 +134,7 @@ hist_ <- AllTracks4 %>% ggplot(aes(valence)) +
   labs(x = "Valence", y = "Number of Tracks")
 hist_
 
+
 hist_p <- MasterC4 %>% ggplot(aes(position)) +
   geom_histogram(binwidth=0.01, fill=I("blue"), col=I("pink"), alpha=.6) +
   labs(x = "Position", y = "Number")
@@ -134,13 +142,16 @@ hist_p
 #unusable
 
 
+
 hist_d <- MasterC4 %>% ggplot(aes(date)) +
-  geom_histogram(binwidth=0.01, fill=I("blue"), col=I("pink"), alpha=.6) +
+ geom_histogram(binwidth=0.01, fill=I("blue"), col=I("pink"), alpha=.6) +
   labs(x = "date", y = "")
 hist_d
 
 # summary info: creating and printing the boxplot for song valence
 boxplot(AllTracks4$valence, col = "blue")
+# summary info: creating and printing the boxplot for song loudness
+boxplot(AllTracks4$loudness, col = "red")
 
 # scatter plot: tempos affect on valence
 with(AllTracks4, plot(tempo, valence, xlab="Tempo", ylab="Valence"))
@@ -165,9 +176,9 @@ ggplot(data = AllTracks4) +
 
 
 # over time
-ggplot(data = MasterC4) +
-  geom_point(mapping = aes(x = date, y = duration.m), col=I("blue"), alpha=.4) +
-  geom_smooth(mapping = aes(x = date, y = duration.m)) + 
+ggplot(data = MasterC3) +
+  geom_point(mapping = aes(x = date, y = duration_mins), col=I("blue"), alpha=.4) +
+  geom_smooth(mapping = aes(x = date, y = duration_mins)) + 
   labs(title = "Date vs Minutes", 
        x = "Dates", y = "Minutes")
 
@@ -197,6 +208,8 @@ b + transition_time(date) +
 
 
 
+
+
 ### NOT FOR USE 
 
 # merge data
@@ -216,7 +229,6 @@ ChartMaster <- merge(MasterC4, AllTracks3, by.c =c('playlis', 'position', 'album
                                                    'Show_tunes', 'duration.m'), all.x=T)
 ChartMaster
 View(ChartMaster)
-
 
 
 
