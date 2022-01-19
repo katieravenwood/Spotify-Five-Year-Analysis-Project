@@ -150,6 +150,8 @@ hist_d
 
 # summary info: creating and printing the boxplot for song valence
 boxplot(AllTracks4$valence, col = "blue")
+# summary info: creating and printing the boxplot for song loudness
+boxplot(AllTracks4$loudness, col = "red")
 
 # scatter plot: tempos affect on valence
 with(AllTracks4, plot(tempo, valence, xlab="Tempo", ylab="Valence"))
