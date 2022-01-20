@@ -52,8 +52,6 @@ View(head(MasterC3, 15))
 # tail
 View(tail(MasterC3, 15))
 
-
-
 # import second data set: 2
 library(readr)
 AllChartAlbumTracksRecoded <- read_csv("AllChartAlbumTracksRecoded.csv")
@@ -141,9 +139,9 @@ hist_d <- MasterC3 %>% ggplot(aes(date)) +
 hist_d
 
 # summary info: creating and printing the boxplot for song valence
-boxplot(AllTracks4$valence, col = "blue")
+boxplot(AllTracks3$valence, col = "blue")
 # summary info: creating and printing the boxplot for song loudness
-boxplot(AllTracks4$loudness, col = "red")
+boxplot(AllTracks3$loudness, col = "red")
 
 # scatter plot: tempos affect on valence
 with(AllTracks3, plot(tempo, valence, xlab="Tempo", ylab="Valence"))
@@ -205,7 +203,7 @@ b + transition_time(date) +
 ### NOT FOR USE 
 
 # merge data
-ChartMaster <- merge(MasterC4, AllTracks3, by.c =c('playlis', 'position', 'album', 'date', 'album_artists',
+ChartMaster <- merge(MasterC3, AllTracks3, by.c =c('playlis', 'position', 'album', 'date', 'album_artists',
                                                    'album_artists_pop', 'album_artists_followers', 'track',
                                                    'popularity', 'track_artists', 'explicit', 'danceability', 
                                                    'energy', 'key', 'loudness', 'acousticness', 'instrumentalness',
