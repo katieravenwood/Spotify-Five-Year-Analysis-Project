@@ -48,19 +48,9 @@ View(MasterC3)
 
 # Checking Head/Tail of data / setting second argument to 15 to observe first and last 15 rows of data
 # head 
-View(head(MasterC4, 15))
-# tail
-View(tail(MasterC4, 15))
-
-
-
-
-# Checking Head/Tail of data / setting second argument to 15 to observe first and last 15 rows of data
-# head 
 View(head(MasterC3, 15))
 # tail
 View(tail(MasterC3, 15))
-
 
 
 
@@ -101,12 +91,8 @@ class(AllTracks2)
 dim(AllTracks2)
 
 # Converting duration to minutes: 2
-AllTracks3 <- AllTracks2 %>% mutate(duration_mins = duration_ms/60)
+AllTracks3 <- AllTracks2 %>% mutate(duration_mins = duration_ms/60000)
 View(AllTracks3)
-# re-converting: 2
-AllTracks4 <- AllTracks3 %>% mutate(duration.m = duration_mins/60)
-# View updated data set
-View(AllTracks4)
 
 # Checking Head/Tail of data / setting second argument to 15 to observe first and last 15 rows of data
 # head 
@@ -114,36 +100,42 @@ View(head(AllTracks3, 15))
 # tail
 View(tail(AllTracks3, 15))
 
+## 3RD DATA SET
+# importing this data set to use recoded year column
+library(readr)
+AllTracksAndChartsJoined <- read_csv("~/Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/AllTracksAndChartsJoined.csv")
+View(AllTracksAndChartsJoined)
+
+# Considering joining All track and Master data set 
+
+
 # data set: 1
 # how many artists are in this data set ?
-select(MasterC4, album_artists) %>% unique %>% nrow 
+select(MasterC3, album_artists) %>% unique %>% nrow 
 ## [1] 308
 # how many different dates represented in data set ?
-select(MasterC4, date) %>% unique %>% nrow 
+select(MasterC3, date) %>% unique %>% nrow 
 ## [1] 356
 # all dates
-unique(MasterC4$date)
+unique(MasterC3$date)
 
-ranking <- arrange(MasterC4, desc(position))
+ranking <- arrange(MasterC3, desc(position))
 head(ranking, 10)
 
 
 #creating and printing histograms
-hist_ <- AllTracks4 %>% ggplot(aes(valence)) +
+hist_ <- AllTracks3 %>% ggplot(aes(valence)) +
   geom_histogram(binwidth=0.01, fill=I("blue"), col=I("pink"), alpha=.6) +
   labs(x = "Valence", y = "Number of Tracks")
 hist_
 
 
-hist_p <- MasterC4 %>% ggplot(aes(position)) +
+hist_p <- MasterC3 %>% ggplot(aes(position)) +
   geom_histogram(binwidth=0.01, fill=I("blue"), col=I("pink"), alpha=.6) +
   labs(x = "Position", y = "Number")
 hist_p
 #unusable
-
-
-
-hist_d <- MasterC4 %>% ggplot(aes(date)) +
+hist_d <- MasterC3 %>% ggplot(aes(date)) +
  geom_histogram(binwidth=0.01, fill=I("blue"), col=I("pink"), alpha=.6) +
   labs(x = "date", y = "")
 hist_d
@@ -154,22 +146,22 @@ boxplot(AllTracks4$valence, col = "blue")
 boxplot(AllTracks4$loudness, col = "red")
 
 # scatter plot: tempos affect on valence
-with(AllTracks4, plot(tempo, valence, xlab="Tempo", ylab="Valence"))
+with(AllTracks3, plot(tempo, valence, xlab="Tempo", ylab="Valence"))
 
 # to expand tempo on valence
-ggplot(data = AllTracks4) +
+ggplot(data = AllTracks3) +
   geom_point(mapping = aes(x = tempo, y = valence), col=I("red"), alpha=.4) +
   labs(title = "Tempo vs. Valence", 
        x = "Tempo", y = "Valence")
 
 # scatterplot expanded on track popularity on valence
-ggplot(data = AllTracks4) +
+ggplot(data = AllTracks3) +
   geom_point(mapping = aes(x = track_pop, y = valence), col=I("brown"), alpha=.4) +
   labs(title = "Track Popularity vs. Valence", 
        x = "Popularity", y = "Valence")
 
 # adding dimension with tempo
-ggplot(data = AllTracks4) +
+ggplot(data = AllTracks3) +
   geom_point(mapping = aes(x = track_pop, y = valence, size=tempo), col=I("pink"), alpha=.4) +
   labs(title = "Popularity vs. Valence", 
        x = "Popularity", y = "Valence")
@@ -183,21 +175,21 @@ ggplot(data = MasterC3) +
        x = "Dates", y = "Minutes")
 
 # splitting into facets, seeing individual affects of valence on popularity, categorizing by genre
-ggplot(data = AllTracks4) + 
+ggplot(data = AllTracks3) + 
   geom_point(mapping = aes(x = valence, y = track_pop, size=tempo), col=I("orange"), alpha=.4) + 
   facet_wrap(~ genres, ncol = 10)
 # splitting into facets, seeing individual affects of valence on tempo, categorizing by genre
-ggplot(data = AllTracks4) + 
+ggplot(data = AllTracks3) + 
   geom_point(mapping = aes(x = valence, y = tempo, size=tempo), col=I("purple"), alpha=.4) + 
   facet_wrap(~ genres, ncol = 10)
 # splitting into facets, seeing individual affects of energy on valence, categorizing by genre
-ggplot(data = AllTracks4) + 
+ggplot(data = AllTracks3) + 
   geom_point(mapping = aes(x = energy, y = valence, size=tempo), col=I("red"), alpha=.4) + 
   facet_wrap(~ genres, ncol = 10)
 
 
 #static plot
-b <- ggplot(MasterC4) +  
+b <- ggplot(MasterC3) +  
   geom_point(mapping = aes(x = duration.m, y = popularity, size=tempo), col=I("blue"), alpha=.4) + 
   labs(x = "Duration (mins)", y = "Popularity")
 b
