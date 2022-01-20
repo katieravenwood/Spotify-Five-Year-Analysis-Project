@@ -52,7 +52,6 @@ View(head(MasterC3, 15))
 # tail
 View(tail(MasterC3, 15))
 
-
 # import second data set: 2
 library(readr)
 AllChartAlbumTracksRecoded <- read_csv("AllChartAlbumTracksRecoded.csv")
@@ -93,12 +92,20 @@ dim(AllTracks2)
 AllTracks3 <- AllTracks2 %>% mutate(duration_mins = duration_ms/60000)
 View(AllTracks3)
 
-
 # Checking Head/Tail of data / setting second argument to 15 to observe first and last 15 rows of data
 # head 
 View(head(AllTracks3, 15))
 # tail
 View(tail(AllTracks3, 15))
+
+## 3RD DATA SET
+# importing this data set to use recoded year column
+library(readr)
+AllTracksAndChartsJoined <- read_csv("~/Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/AllTracksAndChartsJoined.csv")
+View(AllTracksAndChartsJoined)
+
+# Considering joining All track and Master data set 
+
 
 # data set: 1
 # how many artists are in this data set ?
@@ -126,9 +133,6 @@ hist_p <- MasterC3 %>% ggplot(aes(position)) +
   labs(x = "Position", y = "Number")
 hist_p
 #unusable
-
-
-
 hist_d <- MasterC3 %>% ggplot(aes(date)) +
  geom_histogram(binwidth=0.01, fill=I("blue"), col=I("pink"), alpha=.6) +
   labs(x = "date", y = "")
