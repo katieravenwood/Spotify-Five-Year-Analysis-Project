@@ -5,6 +5,285 @@ library(tidyr)
 library(ggplot2)
 library(gganimate)
 
+# 3rd data set; Data sets 1 & 2 below with rest of script
+# importing this data set to use re-coded year column
+library(readr)
+AllTracksAndChartsJoined <- read_csv("~/Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/AllTracksAndChartsJoined.csv")
+View(AllTracksAndChartsJoined)
+# rename dataset
+atcjoined <- AllTracksAndChartsJoined
+names(atcjoined)
+# see all column names: 
+names(atcjoined)
+# mutate to get minutes
+atcjoined2 <- atcjoined %>% mutate(duration_mins = duration_ms/60000)
+View(atcjoined2)
+# remove columns unnecessary
+atcjoined3 = subset(atcjoined2, select = -c(X1, playlist_id, album_id, album_artist, track_id, track_artists_ids, 
+                                            track_artists_genres, track_artist_id, 
+                                            track_artists_genres_consolidate, track_artists,
+                                            track_artists_followers, track_artists_popularity))
+View(atcjoined3)
+
+# reorder columns, organizes data set for easier read
+col_order <- c("chart_position", "playlist_name",
+               "album_name", "album_release_date","track_artist", 
+               "track_name","duration_mins", "track_explicit",
+               "track_popularity", "track_artist_popularity",
+               "track_artist_followers", "danceability", "energy",
+               "loudness", "liveness", "acousticness", "instrumentalness",
+               "key", "mode", "tempo", "valence", "time_signature",
+               "main_genre", "Rock", "Hip-hop", "Latin", "Christian",
+               "Soul", "Jazz", "Funk", "R&B", "Show_tunes", "Misc",
+               "Pop", "Edm", "Indie", "Country", "Metal", "Folk", 
+               "Easy_listening", "Reggae")
+atcjoined4 <- atcjoined3[, col_order]
+View(atcjoined4)
+# rename long column names: 
+atcjoined5 <- rename(atcjoined4, 
+                    chart = chart_position,
+                    playlist = playlist_name,
+                    album = album_name,
+                    date = album_release_date,
+                    artist = track_artist,
+                    track = track_name,
+                    duration = duration_mins,
+                    explicit = track_explicit,
+                    track_pop = track_popularity,
+                    artist_pop = track_artist_popularity,
+                    artist_follows = track_artist_followers,
+                    genre = main_genre)
+View(atcjoined5)
+
+# saving data set as csv
+#write csv
+write.csv(atcjoined5, "/Users/biancaabreu/Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/\\ACATjoined.csv", row.names = FALSE)
+
+
+# IMPORT NEW CREATED DATA SET
+#  If using this as start load packages:
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(gganimate)
+
+# Data
+library(readr)
+ACATjoined <- read_csv("Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/ACATjoined.csv")
+View(ACATjoined)
+
+# ANALYSIS
+
+## BOX PLOT
+
+#Summary
+# valence
+boxplot(ACATjoined$valence, col = "purple")
+# loudness
+boxplot(ACATjoined$loudness, col = "red")
+# tempo
+boxplot(ACATjoined$tempo, col = "black")
+# energy
+boxplot(ACATjoined$energy, col = "blue")
+# popularity
+boxplot(ACATjoined$track_pop, col = "pink")
+# artist popularity
+boxplot(ACATjoined$artist_pop, col = "gold")
+# artist following
+boxplot(ACATjoined$artist_follows, col = "red")
+
+
+## SCATTER PLOTS
+
+# tempos | valence
+with(ACATjoined, plot(tempo, valence, xlab="Tempo", ylab="Valence"))
+# tempo | energy
+with(ACATjoined, plot(tempo, energy, xlab="Tempo", ylab="Energy"))
+# tempo | danceability
+with(ACATjoined, plot(tempo, danceability, xlab="Tempo", ylab="Danceability"))
+# tempo | instrumentalness
+with(ACATjoined, plot(tempo, instrumentalness, xlab="Tempo", ylab="Instrumentalness"))
+
+# STATIC PLOT
+# Duration vs. Popularity, dimensions of tempo
+static_dp <- ggplot(ACATjoined) +  
+  geom_point(mapping = aes(x = duration, y = track_pop, size=tempo), col=I("purple"), alpha=.4) + 
+  labs(x = "Duration (mins)", y = "Popularity")
+static_dp
+
+# Popularity vs. Danceability, dimensions of valence
+static_pd <- ggplot(ACATjoined) +  
+  geom_point(mapping = aes(x = track_pop, y = danceability, size=valence), col=I("purple"), alpha=.4) + 
+  geom_smooth(mapping = aes(x = track_pop, y = danceability)) + 
+  labs(x = "Track Popularity", y = "Danceability")
+static_pd
+
+# thinking if popularity is common among track and artist
+# Track Popularity vs. Artist Popularity
+static_pap <- ggplot(ACATjoined) +  
+  geom_point(mapping = aes(x = artist_pop, y = track_pop, col=I("pink"), alpha=.4)) + 
+  geom_smooth(mapping = aes(x = artist_pop, y = track_pop)) + 
+  labs(x = "Artist Popularity", y = "Track Popularity")
+static_pap
+#  adding valence as dimension
+static_pap2 <- ggplot(ACATjoined) +  
+  geom_point(mapping = aes(x = artist_pop, y = track_pop, size=valence), col=I("pink"), alpha=.4) + 
+  geom_smooth(mapping = aes(x = artist_pop, y = track_pop)) + 
+  labs(x = "Artist Popularity", y = "Track Popularity")
+static_pap2
+
+# Valence vs. Loudness, dimensions of danceability
+static_vl <- ggplot(ACATjoined) +  
+  geom_point(mapping = aes(x = valence, y = loudness, size=danceability), col=I("orange"), alpha=.4) + 
+  geom_smooth(mapping = aes(x = valence, y = loudness)) + 
+  labs(x = "Valence", y = "Loudness")
+static_vl
+
+# acknowledging the concentration of danceability in the static_vl plot
+# decided to explore that further
+
+# boxplot summary: danceability
+boxplot(ACATjoined$danceability, col = "blue")
+
+# to expand danceability join with genre
+ggplot(data = ACATjoined) +
+  geom_point(mapping = aes(x = genre, y = danceability), col=I("brown"), alpha=.4) +
+  labs(title = "Danceability vs. Genre", 
+       x = "Genre", y = "Danceability")
+
+# danceability with loudness to cross reference with genre
+ggplot(data = ACATjoined) +
+  geom_point(mapping = aes(x = loudness, y = danceability), col=I("black"), alpha=.4) +
+  geom_smooth(mapping = aes(x = loudness, y = danceability)) +
+  labs(title = "Loudness vs. Danceabiliy", 
+       x = "Loudness", y = "Danceability")
+
+# scatter plot expanded on track popularity on valence
+ggplot(data = ACATjoined) +
+  geom_point(mapping = aes(x = track_pop, y = valence), col=I("red"), alpha=.4) +
+  labs(title = "Track Popularity vs. Valence", 
+       x = "Popularity", y = "Valence")
+
+# adding dimension with tempo
+ggplot(data = ACATjoined) +
+  geom_point(mapping = aes(x = track_pop, y = valence, size=tempo), col=I("pink"), alpha=.4) +
+  labs(title = "Popularity vs. Valence", 
+       x = "Popularity", y = "Valence")
+
+## FACETS
+
+# Valence vs. Track popularity, dimensions of tempo, wrapped by Genre
+ggplot(data = ACATjoined) + 
+  geom_point(mapping = aes(x = valence, y = track_pop, size=tempo), col=I("orange"), alpha=.4) + 
+  geom_smooth(mapping = aes(x = valence, y = track_pop)) +
+  facet_wrap(~ genre, ncol = 10)
+
+# Valence vs. Energy, dimensions of Track Popularity, wrapped by Genre
+ggplot(data = ACATjoined) + 
+  geom_point(mapping = aes(x = valence, y = energy, size=track_pop), col=I("purple"), alpha=.4) + 
+  geom_smooth(mapping = aes(x = valence, y = energy)) +
+  facet_wrap(~ genre, ncol = 10)
+
+#interested how this looks with track pop & artist pop on valence
+# Artist Pop vs. Track Pop, dimensions of Valence, wrapped by Genre
+ggplot(data = ACATjoined) + 
+  geom_point(mapping = aes(x = artist_pop, y = track_pop, size=valence), col=I("blue"), alpha=.4) + 
+  facet_wrap(~ genre, ncol = 10)
+
+
+# Track Pop vs. Explicit Lyrics, dimensions in Track popularity, wrapped by Genre
+ggplot(data = ACATjoined) + 
+  geom_point(mapping = aes(x = explicit, y = track_pop, size=track_pop), col=I("green"), alpha=.4) + 
+  geom_smooth(mapping = aes(x = explicit, y = track_pop)) +
+  facet_wrap(~ genre, ncol = 10)
+
+
+## LINEAR REGRESSIONS
+
+# Loudness ~ Energy, 
+lmLE = lm(energy~loudness, data = ACATjoined) 
+summary(lmLE) 
+# plot
+ggplot(ACATjoined, aes(x = loudness, y = energy)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE)
+# Plot Flip, is loudness a good predictor of energy?
+ggplot(ACATjoined, aes(x = energy, y = loudness)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE)
+
+# Valence ~ Energy
+lmVE = lm(energy~valence, data = ACATjoined) 
+summary(lmVE) 
+# plot
+ggplot(ACATjoined, aes(x = valence, y = energy)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE, color = "goldenrod2")
+# Plot Flip, is valence a good predictor of energy?
+ggplot(ACATjoined, aes(x = energy, y = valence)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE, color = "goldenrod2")
+
+# Valence ~ Danceability
+lmVD = lm(danceability~valence, data = ACATjoined) 
+summary(lmVD) 
+# plot
+ggplot(ACATjoined, aes(x = valence, y = danceability)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE, color = "pink")
+# Plot Flip, is valence a good predictor of danceability?
+ggplot(ACATjoined, aes(x = danceability, y = valence)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE, color = "pink")
+
+# Track Popularity & Explicit Tracks
+lmTPE = lm(explicit~track_pop, data = ACATjoined) 
+summary(lmTPE) 
+# plot
+ggplot(ACATjoined, aes(x = track_pop, y = explicit)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE, color = "green")
+
+# Artist Popularity ~ Track Popularity
+lmAPTP = lm(track_pop~artist_pop, data = ACATjoined) 
+summary(lmAPTP) 
+# plot
+ggplot(ACATjoined, aes(x = artist_pop, y = track_pop)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE, color = "orange")
+# Plot Flip, is artist pop a good predictor of track pop?
+ggplot(ACATjoined, aes(x = track_pop, y = artist_pop)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE, color = "orange")
+
+## CORRELATION
+library(corrplot)
+library(PerformanceAnalytics)
+# Loudness & Energy
+cor.test(ACATjoined$loudness, ACATjoined$energy, method="pearson", use = "complete.obs")
+
+# Loudness & Danceability
+cor.test(ACATjoined$loudness, ACATjoined$danceability, method="pearson", use = "complete.obs")
+
+# Loudness & Valence
+cor.test(ACATjoined$loudness, ACATjoined$valence, method="pearson", use = "complete.obs")
+
+# Energy & Liveness
+cor.test(ACATjoined$energy, ACATjoined$liveness, method="pearson", use = "complete.obs")
+
+# Artist Popularity & Track Popularity
+cor.test(ACATjoined$artist_pop, ACATjoined$track_pop, method="pearson", use = "complete.obs")
+
+# Track Popularity & Duration
+cor.test(ACATjoined$track_pop, ACATjoined$duration, method="pearson", use = "complete.obs")
+
+# Correlation Matrices
+acatmatrice <- ACATjoined[, c(7, 9, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21 )]
+acatmatrice
+# chart matrice
+chart.Correlation(acatmatrice, histogram=FALSE, method="pearson")
+# correlation matrix
+corr_matrix <- cor(acatmatrice)
+corr_matrix
+
+corrplot(corr_matrix, type="lower", order="hclust", p.mat = corr_matrix,  sig.level = 0.01, insig="blank")
+# corrplot not working 
+# Error in hclust(as.dist(1 - corr), method = hclust.method) : NA/NaN/Inf in foreign function call (arg 10)
+
+
+                           ##### NOT FOR USE #####
+
 # import first data data:1
 # set working path
 setwd("~/Documents/GitHub/Spotify-Five-Year-Analysis-Project/data")
@@ -62,19 +341,19 @@ View(AllChartAlbumTracksRecoded)
 names(AllChartAlbumTracksRecoded)
 # rename long column names: 2
 AllTracks <- rename(AllChartAlbumTracksRecoded, 
-                     track = track_name,
-                     track_pop = track_popularity,
-                     artists = track_artists,
-                     artists_ids = track_artists_ids,
-                     artists_pop = track_artists_popularity,
-                     explicit = track_explicit,
-                     artists_follows = track_artists_followers,
-                     album = album_name,
-                     artist = track_artist,
-                     artist_id = track_artist_id,
-                     artist_pop = track_artist_popularity,
-                     artist_follows = track_artist_followers,
-                     genres = main_genre)
+                    track = track_name,
+                    track_pop = track_popularity,
+                    artists = track_artists,
+                    artists_ids = track_artists_ids,
+                    artists_pop = track_artists_popularity,
+                    explicit = track_explicit,
+                    artists_follows = track_artists_followers,
+                    album = album_name,
+                    artist = track_artist,
+                    artist_id = track_artist_id,
+                    artist_pop = track_artist_popularity,
+                    artist_follows = track_artist_followers,
+                    genres = main_genre)
 AllTracks
 
 # remove columns unnecessary: 2
@@ -97,15 +376,6 @@ View(AllTracks3)
 View(head(AllTracks3, 15))
 # tail
 View(tail(AllTracks3, 15))
-
-## 3RD DATA SET
-# importing this data set to use recoded year column
-library(readr)
-AllTracksAndChartsJoined <- read_csv("~/Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/AllTracksAndChartsJoined.csv")
-View(AllTracksAndChartsJoined)
-
-# Considering joining All track and Master data set 
-
 
 # data set: 1
 # how many artists are in this data set ?
@@ -134,7 +404,7 @@ hist_p <- MasterC3 %>% ggplot(aes(position)) +
 hist_p
 #unusable
 hist_d <- MasterC3 %>% ggplot(aes(date)) +
- geom_histogram(binwidth=0.01, fill=I("blue"), col=I("pink"), alpha=.6) +
+  geom_histogram(binwidth=0.01, fill=I("blue"), col=I("pink"), alpha=.6) +
   labs(x = "date", y = "")
 hist_d
 
@@ -199,8 +469,7 @@ b + transition_time(date) +
 
 
 
-
-### NOT FOR USE 
+   ########
 
 # merge data
 ChartMaster <- merge(MasterC3, AllTracks3, by.c =c('playlis', 'position', 'album', 'date', 'album_artists',
@@ -220,5 +489,25 @@ ChartMaster <- merge(MasterC3, AllTracks3, by.c =c('playlis', 'position', 'album
 ChartMaster
 View(ChartMaster)
 
+# creating date/times
+library(tidyverse)
+library(lubridate)
+# convert date info in format 'mm/dd/yyyy'
+strDates <- c("01/05/1965", "08/16/1975")
+dates <- as.Date(strDates, "%m/%d/%Y")
+
+atcjoined5$date <- as_date(atcjoined5$date)
+
+atcjoined5$date <- mdy(atcjoined5$date)
+
+atcjoined5 <- atcjoined5 %>%
+  mutate(date = recode(date, as.Date(x, format = %d,%m,%Y))) 
 
 
+# HEAT MAP
+# Track Popularity by Genre
+ggplot(ACATjoined, aes(x = genre, y = track_pop, fill = valence)) +
+  geom_tile(color = "Blue") +
+  scale_fill_gradient(low = "white", high = "purple") +
+  coord_fixed()
+#unusable heat map coding
