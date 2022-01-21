@@ -193,13 +193,55 @@ ggplot(data = ACATjoined) +
   geom_smooth(mapping = aes(x = explicit, y = track_pop)) +
   facet_wrap(~ genre, ncol = 10)
 
-# HEAT MAP
-# Track Popularity by Genre
-ggplot(ACATjoined, aes(x = genre, y = track_pop, fill = valence)) +
-  geom_tile(color = "Blue") +
-  scale_fill_gradient(low = "white", high = "purple") +
-  coord_fixed()
-#unusable heat map coding
+
+# LINEAR REGRESSIONS
+
+# Loudness ~ Energy, 
+lmLE = lm(energy~loudness, data = ACATjoined) 
+summary(lmLE) 
+# plot
+ggplot(ACATjoined, aes(x = loudness, y = energy)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE)
+# Plot Flip, is loudness a good predictor of energy?
+ggplot(ACATjoined, aes(x = energy, y = loudness)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE)
+
+# Valence ~ Energy
+lmVE = lm(energy~valence, data = ACATjoined) 
+summary(lmVE) 
+# plot
+ggplot(ACATjoined, aes(x = valence, y = energy)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE, color = "goldenrod2")
+# Plot Flip, is valence a good predictor of energy?
+ggplot(ACATjoined, aes(x = energy, y = valence)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE, color = "goldenrod2")
+
+# Valence ~ Danceability
+lmVD = lm(danceability~valence, data = ACATjoined) 
+summary(lmVD) 
+# plot
+ggplot(ACATjoined, aes(x = valence, y = danceability)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE, color = "pink")
+# Plot Flip, is valence a good predictor of danceability?
+ggplot(ACATjoined, aes(x = danceability, y = valence)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE, color = "pink")
+
+# Track Popularity & Explicit Tracks
+lmTPE = lm(explicit~track_pop, data = ACATjoined) 
+summary(lmTPE) 
+# plot
+ggplot(ACATjoined, aes(x = track_pop, y = explicit)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE, color = "green")
+
+# Artist Popularity ~ Track Popularity
+lmAPTP = lm(track_pop~artist_pop, data = ACATjoined) 
+summary(lmAPTP) 
+# plot
+ggplot(ACATjoined, aes(x = artist_pop, y = track_pop)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE, color = "orange")
+# Plot Flip, is artist pop a good predictor of track pop?
+ggplot(ACATjoined, aes(x = track_pop, y = artist_pop)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE, color = "orange")
 
 
 
@@ -424,3 +466,11 @@ atcjoined5$date <- mdy(atcjoined5$date)
 atcjoined5 <- atcjoined5 %>%
   mutate(date = recode(date, as.Date(x, format = %d,%m,%Y))) 
 
+
+# HEAT MAP
+# Track Popularity by Genre
+ggplot(ACATjoined, aes(x = genre, y = track_pop, fill = valence)) +
+  geom_tile(color = "Blue") +
+  scale_fill_gradient(low = "white", high = "purple") +
+  coord_fixed()
+#unusable heat map coding
