@@ -74,7 +74,9 @@ View(ACATjoined)
 
 # ANALYSIS
 
-# BOX PLOT: Summary
+## BOX PLOT
+
+#Summary
 # valence
 boxplot(ACATjoined$valence, col = "purple")
 # loudness
@@ -91,7 +93,8 @@ boxplot(ACATjoined$artist_pop, col = "gold")
 boxplot(ACATjoined$artist_follows, col = "red")
 
 
-# SCATTER PLOTS
+## SCATTER PLOTS
+
 # tempos | valence
 with(ACATjoined, plot(tempo, valence, xlab="Tempo", ylab="Valence"))
 # tempo | energy
@@ -167,7 +170,8 @@ ggplot(data = ACATjoined) +
   labs(title = "Popularity vs. Valence", 
        x = "Popularity", y = "Valence")
 
-# FACETS
+## FACETS
+
 # Valence vs. Track popularity, dimensions of tempo, wrapped by Genre
 ggplot(data = ACATjoined) + 
   geom_point(mapping = aes(x = valence, y = track_pop, size=tempo), col=I("orange"), alpha=.4) + 
@@ -194,7 +198,7 @@ ggplot(data = ACATjoined) +
   facet_wrap(~ genre, ncol = 10)
 
 
-# LINEAR REGRESSIONS
+## LINEAR REGRESSIONS
 
 # Loudness ~ Energy, 
 lmLE = lm(energy~loudness, data = ACATjoined) 
@@ -243,6 +247,39 @@ ggplot(ACATjoined, aes(x = artist_pop, y = track_pop)) +
 ggplot(ACATjoined, aes(x = track_pop, y = artist_pop)) +
   geom_point() + geom_smooth(method=lm, se=FALSE, color = "orange")
 
+## CORRELATION
+library(corrplot)
+library(PerformanceAnalytics)
+# Loudness & Energy
+cor.test(ACATjoined$loudness, ACATjoined$energy, method="pearson", use = "complete.obs")
+
+# Loudness & Danceability
+cor.test(ACATjoined$loudness, ACATjoined$danceability, method="pearson", use = "complete.obs")
+
+# Loudness & Valence
+cor.test(ACATjoined$loudness, ACATjoined$valence, method="pearson", use = "complete.obs")
+
+# Energy & Liveness
+cor.test(ACATjoined$energy, ACATjoined$liveness, method="pearson", use = "complete.obs")
+
+# Artist Popularity & Track Popularity
+cor.test(ACATjoined$artist_pop, ACATjoined$track_pop, method="pearson", use = "complete.obs")
+
+# Track Popularity & Duration
+cor.test(ACATjoined$track_pop, ACATjoined$duration, method="pearson", use = "complete.obs")
+
+# Correlation Matrices
+acatmatrice <- ACATjoined[, c(7, 9, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21 )]
+acatmatrice
+# chart matrice
+chart.Correlation(acatmatrice, histogram=FALSE, method="pearson")
+# correlation matrix
+corr_matrix <- cor(acatmatrice)
+corr_matrix
+
+corrplot(corr_matrix, type="lower", order="hclust", p.mat = corr_matrix,  sig.level = 0.01, insig="blank")
+# corrplot not working 
+# Error in hclust(as.dist(1 - corr), method = hclust.method) : NA/NaN/Inf in foreign function call (arg 10)
 
 
                            ##### NOT FOR USE #####
