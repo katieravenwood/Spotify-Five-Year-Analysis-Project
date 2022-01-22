@@ -208,7 +208,9 @@ ggplot(data = ATACrejoined) +
   labs(title = "Danceability & Acousticness", 
        x = "Danceability", y = "Acousticness")
 
-
+# Acousticness & Energy
+ggplot(ATACrejoined, aes(x = acousticness, y = energy)) +
+  + geom_point() + geom_smooth(method=lm, se=FALSE, color = "orange")
 
 ## FACETS
 
@@ -302,6 +304,7 @@ ggplot(ATACrejoined, aes(x = track_pop, y = speechiness)) +
 ## CORRELATION
 library(corrplot)
 library(PerformanceAnalytics)
+
 # Loudness & Energy
 cor.test(ATACrejoined$loudness, ATACrejoined$energy, method="pearson", use = "complete.obs")
 
@@ -322,6 +325,8 @@ cor.test(ATACrejoined$track_pop, ATACrejoined$duration, method="pearson", use = 
 
 # Track Popularity & Speechiness
 cor.test(ATACrejoined$track_pop, ATACrejoined$speechiness, method="pearson", use = "complete.obs")
+
+# Energy & Acousticnes
 
 # Correlation Matrices
 acatmatrice <- ATACrejoined[, c(10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 )]
@@ -516,13 +521,13 @@ ggplot(data = AllTracks3) +
 
 
 #static plot
-b <- ggplot(MasterC3) +  
-  geom_point(mapping = aes(x = duration.m, y = popularity, size=tempo), col=I("blue"), alpha=.4) + 
-  labs(x = "Duration (mins)", y = "Popularity")
+b <- ggplot(ATACrejoined) +  
+  geom_point(mapping = aes(x = genre , y = track_pop, size=valence), col=I("blue"), alpha=.4) + 
+  labs(x = "Genre)", y = "Popularity")
 b
 
 #trying a transition plot
-b + transition_time(date) +
+b + transition_time(year) +
   labs(title = "Release Dates: {frame_time}")
 
 
@@ -560,12 +565,12 @@ atcjoined5$date <- as_date(atcjoined5$date)
 atcjoined5$date <- mdy(atcjoined5$date)
 
 atcjoined5 <- atcjoined5 %>%
-  mutate(date = recode(date, as.Date(x, format = %d,%m,%Y))) 
+  mutate(date = recode(date, as.Date(x, format = ))) 
 
 
 # HEAT MAP
 # Track Popularity by Genre
-ggplot(ACATjoined, aes(x = genre, y = track_pop, fill = valence)) +
+ggplot(ATACrejoined, aes(x = speechiness, y = track_pop, fill = genre)) +
   geom_tile(color = "Blue") +
   scale_fill_gradient(low = "white", high = "purple") +
   coord_fixed()
