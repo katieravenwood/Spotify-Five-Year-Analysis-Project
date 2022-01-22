@@ -142,6 +142,13 @@ static_vl <- ggplot(ATACrejoined) +
   labs(x = "Valence", y = "Loudness")
 static_vl
 
+# Speechiness vs. Liveness
+static_sl <- ggplot(ATACrejoined) +  
+  geom_point(mapping = aes(x = speechiness, y = liveness), col=I("orange"), alpha=.4) + 
+  geom_smooth(mapping = aes(x = speechiness, y = liveness)) + 
+  labs(x = "Speechiness", y = "Liveness")
+static_sl
+
 # acknowledging the concentration of danceability in the static_vl plot
 # decided to explore that further
 
@@ -173,6 +180,36 @@ ggplot(data = ATACrejoined) +
   labs(title = "Popularity vs. Valence", 
        x = "Popularity", y = "Valence")
 
+# Artist Popularity & Instrumentalness
+ggplot(data = ATACrejoined) +
+  geom_point(mapping = aes(x = artist_pop, y = instrumentalness), col=I("blue"), alpha=.4) +
+  geom_smooth(mapping = aes(x = artist_pop, y = instrumentalness)) +
+  labs(title = "Artist Popularity & Instrumentalness", 
+       x = "Artist Popularity", y = "Intrumentalness")
+
+# Loudness * Instrumentalness
+ggplot(data = ATACrejoined) +
+  geom_point(mapping = aes(x = instrumentalness, y = loudness), col=I("blue"), alpha=.4) +
+  geom_smooth(mapping = aes(x = instrumentalness, y = loudness)) +
+  labs(title = "Loudness & Instrumentalness", 
+       x = "Instrumentalness", y = "Loudness")
+
+# Danceability & Instrumentalness
+ggplot(data = ATACrejoined) +
+  geom_point(mapping = aes(x = danceability, y = loudness), col=I("red"), alpha=.4) +
+  geom_smooth(mapping = aes(x = danceability, y = loudness)) +
+  labs(title = "Danceability & Instrumentalness", 
+       x = "Danceability", y = "Loudness")
+
+# Danceability & Acousticness
+ggplot(data = ATACrejoined) +
+  geom_point(mapping = aes(x = danceability, y = acousticness), col=I("green"), alpha=.4) +
+  geom_smooth(mapping = aes(x = danceability, y = acousticness)) +
+  labs(title = "Danceability & Acousticness", 
+       x = "Danceability", y = "Acousticness")
+
+
+
 ## FACETS
 
 # Valence vs. Track popularity, dimensions of tempo, wrapped by Genre
@@ -193,12 +230,17 @@ ggplot(data = ATACrejoined) +
   geom_point(mapping = aes(x = artist_pop, y = track_pop, size=valence), col=I("blue"), alpha=.4) + 
   facet_wrap(~ genre, ncol = 10)
 
-
 # Track Pop vs. Explicit Lyrics, dimensions in Track popularity, wrapped by Genre
 ggplot(data = ATACrejoined) + 
   geom_point(mapping = aes(x = explicit, y = track_pop, size=track_pop), col=I("green"), alpha=.4) + 
   geom_smooth(mapping = aes(x = explicit, y = track_pop)) +
   facet_wrap(~ genre, ncol = 10)
+
+# Track Popularity vs. Speechiness, dimensions in Track pop, wrapped in Genre
+ggplot(data = ATACrejoined) +
+  geom_point(mapping = aes(x = track_pop, y = speechiness, size = track_pop), col=I("red"), alpha=.3) +
+  geom_smooth(mapping = aes(x = track_pop, y = speechiness)) +
+  facet_wrap(~ genre, ncol = 10 )
 
 
 ## LINEAR REGRESSIONS
@@ -250,6 +292,13 @@ ggplot(ATACrejoined, aes(x = artist_pop, y = track_pop)) +
 ggplot(ATACrejoined, aes(x = track_pop, y = artist_pop)) +
   geom_point() + geom_smooth(method=lm, se=FALSE, color = "orange")
 
+# Track Popularity ~ Speechiness
+lmSTP = lm(speechiness~track_pop, data = ATACrejoined) 
+summary(lmSTP)
+# plot
+ggplot(ATACrejoined, aes(x = track_pop, y = speechiness)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE, color = "pink")
+
 ## CORRELATION
 library(corrplot)
 library(PerformanceAnalytics)
@@ -271,18 +320,25 @@ cor.test(ATACrejoined$artist_pop, ATACrejoined$track_pop, method="pearson", use 
 # Track Popularity & Duration
 cor.test(ATACrejoined$track_pop, ATACrejoined$duration, method="pearson", use = "complete.obs")
 
+# Track Popularity & Speechiness
+cor.test(ATACrejoined$track_pop, ATACrejoined$speechiness, method="pearson", use = "complete.obs")
+
 # Correlation Matrices
-acatmatrice <- ATACrejoined[, c(7, 9, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21 )]
+acatmatrice <- ATACrejoined[, c(10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 )]
 acatmatrice
 # chart matrice
 chart.Correlation(acatmatrice, histogram=FALSE, method="pearson")
 # correlation matrix
 corr_matrix <- cor(acatmatrice)
 corr_matrix
+# Corrplot
+corrplot(corr_matrix, type="lower", order="hclust", p.mat = corr_matrix,
+         sig.level = 0.05, insig="blank")
+# used .05 to get more findings
 
-corrplot(corr_matrix, type="lower", order="hclust", p.mat = corr_matrix,  sig.level = 0.01, insig="blank")
-# corrplot not working 
-# Error in hclust(as.dist(1 - corr), method = hclust.method) : NA/NaN/Inf in foreign function call (arg 10)
+
+
+
 
 
                            ##### NOT FOR USE #####
