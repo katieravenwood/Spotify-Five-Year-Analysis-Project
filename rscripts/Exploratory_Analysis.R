@@ -39,6 +39,7 @@ col_order <- c("chart_position", "playlist_name",
                "Easy_listening", "Reggae", "No Genre Assigned")
 atcjoined4 <- atcjoined3[, col_order]
 View(atcjoined4)
+
 # rename long column names: 
 atcjoined5 <- rename(atcjoined4, 
                     chart = chart_position,
@@ -49,7 +50,7 @@ atcjoined5 <- rename(atcjoined4,
                     duration = duration_mins,
                     year = release_year,
                     date = release_date_datetime,
-                    expicit = track_explicit,
+                    explicit = track_explicit,
                     track_pop = track_popularity,
                     artist_pop = track_artist_popularity,
                     artist_follows = track_artist_followers,
@@ -59,7 +60,7 @@ View(atcjoined5)
 
 # saving data set as csv
 #write csv
-write.csv(atcjoined5, "/Users/biancaabreu/Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/\\ATACrejoined.csv", row.names = FALSE)
+write.csv(atcjoined5, "/Users/biancaabreu/Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/\\atacjoin.csv", row.names = FALSE)
 
 
 # IMPORT NEW CREATED DATA SET
@@ -72,233 +73,248 @@ library(gganimate)
 
 # Data
 library(readr)
-ATACrejoined <- read_csv("Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/ATACrejoined.csv")
-View(ATACrejoined)
+atacjoin <- read_csv("Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/atacjoin.csv")
+View(atacjoin)
 # ANALYSIS
 
 ## BOX PLOT
 
 #Summary
 # valence
-boxplot(ATACrejoined$valence, col = "purple")
+boxplot(atacjoin$valence, col = "purple")
 # loudness
-boxplot(ATACrejoined$loudness, col = "red")
+boxplot(atacjoin$loudness, col = "red")
 # tempo
-boxplot(ATACrejoined$tempo, col = "black")
+boxplot(atacjoin$tempo, col = "black")
 # energy
-boxplot(ATACrejoined$energy, col = "blue")
+boxplot(atacjoin$energy, col = "blue")
 # popularity
-boxplot(ATACrejoined$track_pop, col = "pink")
+boxplot(atacjoin$track_pop, col = "pink")
 # artist popularity
-boxplot(ATACrejoined$artist_pop, col = "gold")
+boxplot(atacjoin$artist_pop, col = "gold")
 # artist following
-boxplot(ATACrejoined$artist_follows, col = "red")
+boxplot(atacjoin$artist_follows, col = "red")
 # speechiness
-boxplot(ATACrejoined$speechiness, col = "purple")
+boxplot(atacjoin$speechiness, col = "purple")
 
 ## SCATTER PLOTS
 
 # tempos | valence
-with(ATACrejoined, plot(tempo, valence, xlab="Tempo", ylab="Valence"))
+with(atacjoin, plot(tempo, valence, xlab="Tempo", ylab="Valence"))
 # tempo | energy
-with(ATACrejoined, plot(tempo, energy, xlab="Tempo", ylab="Energy"))
+with(atacjoin, plot(tempo, energy, xlab="Tempo", ylab="Energy"))
 # tempo | danceability
-with(ATACrejoined, plot(tempo, danceability, xlab="Tempo", ylab="Danceability"))
+with(atacjoin, plot(tempo, danceability, xlab="Tempo", ylab="Danceability"))
 # tempo | instrumentalness
-with(ATACrejoined, plot(tempo, instrumentalness, xlab="Tempo", ylab="Instrumentalness"))
+with(atacjoin, plot(tempo, instrumentalness, xlab="Tempo", ylab="Instrumentalness"))
 
-# STATIC PLOT
+## PLOT
+
 # Duration vs. Popularity, dimensions of tempo
-static_dp <- ggplot(ATACrejoined) +  
+ggplot(atacjoin) +  
   geom_point(mapping = aes(x = duration, y = track_pop, size=tempo), col=I("purple"), alpha=.4) + 
   labs(x = "Duration (mins)", y = "Popularity")
-static_dp
+
 
 # Popularity vs. Danceability, dimensions of valence
-static_pd <- ggplot(ATACrejoined) +  
+ggplot(atacjoin) +  
   geom_point(mapping = aes(x = track_pop, y = danceability, size=valence), col=I("purple"), alpha=.4) + 
   geom_smooth(mapping = aes(x = track_pop, y = danceability)) + 
   labs(x = "Track Popularity", y = "Danceability")
-static_pd
+
 
 # thinking if popularity is common among track and artist
 # Track Popularity vs. Artist Popularity
-static_pap <- ggplot(ATACrejoined) +  
+ggplot(atacjoin) +  
   geom_point(mapping = aes(x = artist_pop, y = track_pop, col=I("pink"), alpha=.4)) + 
   geom_smooth(mapping = aes(x = artist_pop, y = track_pop)) + 
   labs(x = "Artist Popularity", y = "Track Popularity")
-static_pap
+
+
 #  adding valence as dimension
-static_pap2 <- ggplot(ATACrejoined) +  
+ggplot(atacjoin) +  
   geom_point(mapping = aes(x = artist_pop, y = track_pop, size=valence), col=I("pink"), alpha=.4) + 
   geom_smooth(mapping = aes(x = artist_pop, y = track_pop)) + 
   labs(x = "Artist Popularity", y = "Track Popularity")
-static_pap2
+
 
 # Valence vs. Loudness, dimensions of danceability
-static_vl <- ggplot(ATACrejoined) +  
+ggplot(atacjoin) +  
   geom_point(mapping = aes(x = valence, y = loudness, size=danceability), col=I("orange"), alpha=.4) + 
   geom_smooth(mapping = aes(x = valence, y = loudness)) + 
   labs(x = "Valence", y = "Loudness")
-static_vl
+
 
 # Speechiness vs. Liveness
-static_sl <- ggplot(ATACrejoined) +  
+ggplot(atacjoin) +  
   geom_point(mapping = aes(x = speechiness, y = liveness), col=I("orange"), alpha=.4) + 
   geom_smooth(mapping = aes(x = speechiness, y = liveness)) + 
   labs(x = "Speechiness", y = "Liveness")
-static_sl
+
 
 # acknowledging the concentration of danceability in the static_vl plot
 # decided to explore that further
 
 # boxplot summary: danceability
-boxplot(ATACrejoined$danceability, col = "blue")
+boxplot(atacjoin$danceability, col = "blue")
 
 # to expand danceability join with genre
-ggplot(data = ATACrejoined) +
+ggplot(data = atacjoin) +
   geom_point(mapping = aes(x = genre, y = danceability), col=I("brown"), alpha=.4) +
   labs(title = "Danceability vs. Genre", 
        x = "Genre", y = "Danceability")
 
 # danceability with loudness to cross reference with genre
-ggplot(data = ATACrejoined) +
+ggplot(data = atacjoin) +
   geom_point(mapping = aes(x = loudness, y = danceability), col=I("black"), alpha=.4) +
   geom_smooth(mapping = aes(x = loudness, y = danceability)) +
   labs(title = "Loudness vs. Danceabiliy", 
        x = "Loudness", y = "Danceability")
 
 # scatter plot expanded on track popularity on valence
-ggplot(data = ATACrejoined) +
+ggplot(data = atacjoin) +
   geom_point(mapping = aes(x = track_pop, y = valence), col=I("red"), alpha=.4) +
   labs(title = "Track Popularity vs. Valence", 
        x = "Popularity", y = "Valence")
 
 # adding dimension with tempo
-ggplot(data = ATACrejoined) +
+ggplot(data = atacjoin) +
   geom_point(mapping = aes(x = track_pop, y = valence, size=tempo), col=I("pink"), alpha=.4) +
   labs(title = "Popularity vs. Valence", 
        x = "Popularity", y = "Valence")
 
 # Artist Popularity & Instrumentalness
-ggplot(data = ATACrejoined) +
+ggplot(data = atacjoin) +
   geom_point(mapping = aes(x = artist_pop, y = instrumentalness), col=I("blue"), alpha=.4) +
   geom_smooth(mapping = aes(x = artist_pop, y = instrumentalness)) +
   labs(title = "Artist Popularity & Instrumentalness", 
        x = "Artist Popularity", y = "Intrumentalness")
 
 # Loudness * Instrumentalness
-ggplot(data = ATACrejoined) +
+ggplot(data = atacjoin) +
   geom_point(mapping = aes(x = instrumentalness, y = loudness), col=I("blue"), alpha=.4) +
   geom_smooth(mapping = aes(x = instrumentalness, y = loudness)) +
   labs(title = "Loudness & Instrumentalness", 
        x = "Instrumentalness", y = "Loudness")
 
 # Danceability & Instrumentalness
-ggplot(data = ATACrejoined) +
+ggplot(data = atacjoin) +
   geom_point(mapping = aes(x = danceability, y = loudness), col=I("red"), alpha=.4) +
   geom_smooth(mapping = aes(x = danceability, y = loudness)) +
   labs(title = "Danceability & Instrumentalness", 
        x = "Danceability", y = "Loudness")
 
 # Danceability & Acousticness
-ggplot(data = ATACrejoined) +
+ggplot(data = atacjoin) +
   geom_point(mapping = aes(x = danceability, y = acousticness), col=I("green"), alpha=.4) +
   geom_smooth(mapping = aes(x = danceability, y = acousticness)) +
   labs(title = "Danceability & Acousticness", 
        x = "Danceability", y = "Acousticness")
 
 # Acousticness & Energy
-ggplot(ATACrejoined, aes(x = acousticness, y = energy)) +
+ggplot(atacjoin, aes(x = acousticness, y = energy)) +
   + geom_point() + geom_smooth(method=lm, se=FALSE, color = "orange")
 
 ## FACETS
 
 # Valence vs. Track popularity, dimensions of tempo, wrapped by Genre
-ggplot(data = ATACrejoined) + 
+ggplot(data = atacjoin) + 
   geom_point(mapping = aes(x = valence, y = track_pop, size=tempo), col=I("orange"), alpha=.4) + 
   geom_smooth(mapping = aes(x = valence, y = track_pop)) +
   facet_wrap(~ genre, ncol = 10)
 
 # Valence vs. Energy, dimensions of Track Popularity, wrapped by Genre
-ggplot(data = ATACrejoined) + 
+ggplot(data = atacjoin) + 
   geom_point(mapping = aes(x = valence, y = energy, size=track_pop), col=I("purple"), alpha=.4) + 
   geom_smooth(mapping = aes(x = valence, y = energy)) +
   facet_wrap(~ genre, ncol = 10)
 
 #interested how this looks with track pop & artist pop on valence
 # Artist Pop vs. Track Pop, dimensions of Valence, wrapped by Genre
-ggplot(data = ATACrejoined) + 
+ggplot(data = atacjoin) + 
   geom_point(mapping = aes(x = artist_pop, y = track_pop, size=valence), col=I("blue"), alpha=.4) + 
   facet_wrap(~ genre, ncol = 10)
 
 # Track Pop vs. Explicit Lyrics, dimensions in Track popularity, wrapped by Genre
-ggplot(data = ATACrejoined) + 
+ggplot(data = atacjoin) + 
   geom_point(mapping = aes(x = explicit, y = track_pop, size=track_pop), col=I("green"), alpha=.4) + 
   geom_smooth(mapping = aes(x = explicit, y = track_pop)) +
   facet_wrap(~ genre, ncol = 10)
 
 # Track Popularity vs. Speechiness, dimensions in Track pop, wrapped in Genre
-ggplot(data = ATACrejoined) +
+ggplot(data = atacjoin) +
   geom_point(mapping = aes(x = track_pop, y = speechiness, size = track_pop), col=I("red"), alpha=.3) +
   geom_smooth(mapping = aes(x = track_pop, y = speechiness)) +
   facet_wrap(~ genre, ncol = 10 )
 
 
+## DEPENDENT T-TEST
+
+# Explicit tracks has changed vy track count?
+
+# Plot weight by group and color by group
+library("ggpubr")
+ggboxplot(atacjoin, x = expicit, y = track_pop, 
+          color = "group", palette = c("#00AFBB", "#E7B800"),
+          order = c("before", "after"),
+          ylab = "Track Popularity", xlab = "Explicit")
+
+
+
 ## LINEAR REGRESSIONS
 
 # Loudness ~ Energy, 
-lmLE = lm(energy~loudness, data = ATACrejoined) 
+lmLE = lm(energy~loudness, data = atacjoin) 
 summary(lmLE) 
 # plot
-ggplot(ATACrejoined, aes(x = loudness, y = energy)) +
+ggplot(atacjoin, aes(x = loudness, y = energy)) +
   geom_point() + geom_smooth(method=lm, se=FALSE)
 # Plot Flip, is loudness a good predictor of energy?
-ggplot(ATACrejoined, aes(x = energy, y = loudness)) +
+ggplot(atacjoin, aes(x = energy, y = loudness)) +
   geom_point() + geom_smooth(method=lm, se=FALSE)
 
 # Valence ~ Energy
-lmVE = lm(energy~valence, data = ATACrejoined) 
+lmVE = lm(energy~valence, data = atacjoin) 
 summary(lmVE) 
 # plot
-ggplot(ATACrejoined, aes(x = valence, y = energy)) +
+ggplot(atacjoin, aes(x = valence, y = energy)) +
   geom_point() + geom_smooth(method=lm, se=FALSE, color = "goldenrod2")
 # Plot Flip, is valence a good predictor of energy?
-ggplot(ATACrejoined, aes(x = energy, y = valence)) +
+ggplot(atacjoin, aes(x = energy, y = valence)) +
   geom_point() + geom_smooth(method=lm, se=FALSE, color = "goldenrod2")
 
 # Valence ~ Danceability
-lmVD = lm(danceability~valence, data = ATACrejoined) 
+lmVD = lm(danceability~valence, data = atacjoin) 
 summary(lmVD) 
 # plot
-ggplot(ATACrejoined, aes(x = valence, y = danceability)) +
+ggplot(atacjoin, aes(x = valence, y = danceability)) +
   geom_point() + geom_smooth(method=lm, se=FALSE, color = "pink")
 # Plot Flip, is valence a good predictor of danceability?
-ggplot(ATACrejoined, aes(x = danceability, y = valence)) +
+ggplot(atacjoin, aes(x = danceability, y = valence)) +
   geom_point() + geom_smooth(method=lm, se=FALSE, color = "pink")
 
 # Track Popularity & Explicit Tracks
-lmTPE = lm(explicit~track_pop, data = ATACrejoined) 
+lmTPE = lm(explicit~track_pop, data = atacjoin) 
 summary(lmTPE) 
 # plot
-ggplot(ATACrejoined, aes(x = track_pop, y = explicit)) +
+ggplot(atacjoin, aes(x = track_pop, y = explicit)) +
   geom_point() + geom_smooth(method=lm, se=FALSE, color = "green")
 
 # Artist Popularity ~ Track Popularity
-lmAPTP = lm(track_pop~artist_pop, data = ATACrejoined) 
+lmAPTP = lm(track_pop~artist_pop, data = atacjoin) 
 summary(lmAPTP) 
 # plot
-ggplot(ATACrejoined, aes(x = artist_pop, y = track_pop)) +
+ggplot(atacjoin, aes(x = artist_pop, y = track_pop)) +
   geom_point() + geom_smooth(method=lm, se=FALSE, color = "orange")
 # Plot Flip, is artist pop a good predictor of track pop?
-ggplot(ATACrejoined, aes(x = track_pop, y = artist_pop)) +
+ggplot(atacjoin, aes(x = track_pop, y = artist_pop)) +
   geom_point() + geom_smooth(method=lm, se=FALSE, color = "orange")
 
 # Track Popularity ~ Speechiness
-lmSTP = lm(speechiness~track_pop, data = ATACrejoined) 
+lmSTP = lm(speechiness~track_pop, data = atacjoin) 
 summary(lmSTP)
 # plot
-ggplot(ATACrejoined, aes(x = track_pop, y = speechiness)) +
+ggplot(atacjoin, aes(x = track_pop, y = speechiness)) +
   geom_point() + geom_smooth(method=lm, se=FALSE, color = "pink")
 
 ## CORRELATION
@@ -306,44 +322,49 @@ library(corrplot)
 library(PerformanceAnalytics)
 
 # Loudness & Energy
-cor.test(ATACrejoined$loudness, ATACrejoined$energy, method="pearson", use = "complete.obs")
+cor.test(atacjoin$loudness, atacjoin$energy, method="pearson", use = "complete.obs")
 
 # Loudness & Danceability
-cor.test(ATACrejoined$loudness, ATACrejoined$danceability, method="pearson", use = "complete.obs")
+cor.test(atacjoin$loudness, atacjoin$danceability, method="pearson", use = "complete.obs")
 
 # Loudness & Valence
-cor.test(ATACrejoined$loudness, ATACrejoined$valence, method="pearson", use = "complete.obs")
+cor.test(atacjoin$loudness, atacjoin$valence, method="pearson", use = "complete.obs")
 
 # Energy & Liveness
-cor.test(ATACrejoined$energy, ATACrejoined$liveness, method="pearson", use = "complete.obs")
+cor.test(atacjoin$energy, atacjoin$liveness, method="pearson", use = "complete.obs")
 
 # Artist Popularity & Track Popularity
-cor.test(ATACrejoined$artist_pop, ATACrejoined$track_pop, method="pearson", use = "complete.obs")
+cor.test(atacjoin$artist_pop, atacjoin$track_pop, method="pearson", use = "complete.obs")
 
 # Track Popularity & Duration
-cor.test(ATACrejoined$track_pop, ATACrejoined$duration, method="pearson", use = "complete.obs")
+cor.test(atacjoin$track_pop, atacjoin$duration, method="pearson", use = "complete.obs")
 
 # Track Popularity & Speechiness
-cor.test(ATACrejoined$track_pop, ATACrejoined$speechiness, method="pearson", use = "complete.obs")
+cor.test(atacjoin$track_pop, atacjoin$speechiness, method="pearson", use = "complete.obs")
 
 # Energy & Acousticnes
 
-# Correlation Matrices
-acatmatrice <- ATACrejoined[, c(10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 )]
+# CORRELATION MATRICE
+acatmatrice <- atacjoin[, c(10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 )]
 acatmatrice
-# chart matrice
+# CHART.MATRICE
 chart.Correlation(acatmatrice, histogram=FALSE, method="pearson")
-# correlation matrix
+# CORRELATION MATRIX
 corr_matrix <- cor(acatmatrice)
 corr_matrix
-# Corrplot
+# CORRPLOT
 corrplot(corr_matrix, type="lower", order="hclust", p.mat = corr_matrix,
          sig.level = 0.05, insig="blank")
 # used .05 to get more findings
 
 
 
+##### SANDBOXING
+library(scatterplot3d)
+library(rgl)
+library(plot3D)
 
+plot3d(atacjoin, energy, loudness, col="red", size=3)
 
 
                            ##### NOT FOR USE #####
