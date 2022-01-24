@@ -23,8 +23,8 @@ The dataset was created via Python using Spotify's public API and playlists crea
 #### Included variables:
 - Billboard Album Chart Name & Year
 - Album ID, Name, Release Year
-- Album artists and album artist IDs
-- Track artists and track artist IDs
+- Album artists' names, IDs, popularity, and associated genres
+- Track artists' names, IDs, popularity, and associated genres
 - Explicit designation
 - Audio features
 
@@ -45,14 +45,19 @@ Data was cleaned and recoded for analysis and machine learning predictions.
 
 Exploratory analyses included visualization and standardization of audio feature variables, as well as correlation analysis and plotting.<br />
 <br />
-Selected plots and visualizations can be viewed here: [Exploratory Analysis]
+
+Exploratory Analysis Notebook and RScript:<br />
+[Exploratory Analysis Notebook](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/65a2542ac09d7c534856f8994fbce64e0ed52d98/notebooks/ExploratoryAnalysis.ipynb)<br />
+[Exploratory Analysis RScript](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/65a2542ac09d7c534856f8994fbce64e0ed52d98/rscripts/Exploratory_Analysis.R)
 
 ## Phase 4: Data Analysis and Machine Learning
 ### Completed 23 January 2022
 
 Linear regression and dependent t-tests were used to analyze the correlation between several audio features, and the data was grouped using the K Means method. Classification of track genres was tested via K Nearest Neighbors and Random Forest algorithms. <br />
 <br />
-More about the data analysis and machine learning can be viewed here: [Data Analysis and Machine Learning]
+Data Analysis and Machine Learning Notebook and RScript:<br />
+[Data Analysis and Machine Learning Notebook](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/65a2542ac09d7c534856f8994fbce64e0ed52d98/notebooks/DataAnalysis.ipynb)<br />
+[Data Analysis RScript]
 
 ## Tableau Visualization and Project Presentation (In Progress)
 
