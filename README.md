@@ -52,7 +52,7 @@ Exploratory analyses included visualization and standardization of audio feature
 ## Phase 4: Data Analysis and Machine Learning
 ### Completed 23 January 2022
 
-Linear regression and dependent t-tests were used to analyze the correlation between several audio features, and the data was grouped using the K Means method. Classification of track genres was tested via K Nearest Neighbors and Random Forest algorithms. 
+Linear regression and dependent t-tests were used to analyze the correlation between several audio features, and the tracks were grouped using the K Means method. Classification of track genres was tested via K Nearest Neighbors and Random Forest algorithms. 
 
 #### Data Analysis and Machine Learning Notebook and RScript:
 [Data Analysis and Machine Learning Notebook](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/65a2542ac09d7c534856f8994fbce64e0ed52d98/notebooks/DataAnalysis.ipynb)<br />
