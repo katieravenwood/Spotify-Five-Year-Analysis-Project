@@ -46,7 +46,7 @@ Data was cleaned and recoded for analysis and machine learning predictions.
 Exploratory analyses included visualization and standardization of audio feature variables, as well as correlation analysis and plotting.<br />
 <br />
 
-Exploratory Analysis Notebook and RScript:<br />
+#### Exploratory Analysis Notebook and RScript:
 [Exploratory Analysis Notebook](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/65a2542ac09d7c534856f8994fbce64e0ed52d98/notebooks/ExploratoryAnalysis.ipynb)<br />
 [Exploratory Analysis RScript](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/65a2542ac09d7c534856f8994fbce64e0ed52d98/rscripts/Exploratory_Analysis.R)
 
@@ -55,7 +55,7 @@ Exploratory Analysis Notebook and RScript:<br />
 
 Linear regression and dependent t-tests were used to analyze the correlation between several audio features, and the data was grouped using the K Means method. Classification of track genres was tested via K Nearest Neighbors and Random Forest algorithms. <br />
 <br />
-Data Analysis and Machine Learning Notebook and RScript:<br />
+#### Data Analysis and Machine Learning Notebook and RScript:
 [Data Analysis and Machine Learning Notebook](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/65a2542ac09d7c534856f8994fbce64e0ed52d98/notebooks/DataAnalysis.ipynb)<br />
 [Data Analysis RScript]
 
