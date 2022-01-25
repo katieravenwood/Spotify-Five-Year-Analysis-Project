@@ -5,8 +5,8 @@ library(tidyr)
 library(ggplot2)
 library(gganimate)
 
-# 3rd data set; Data sets 1 & 2 below with rest of script
-# importing this data set to use re-coded year column and now added speechiness
+# 3rd data set; Data sets 1 & 2 below with rest of script/ under not for use 
+# importing this data set to use re-coded year column and now added speechiness column
 library(readr)
 AllTracksAndChartsJoined <- read_csv("~/Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/AllTracksAndChartsJoined.csv")
 View(AllTracksAndChartsJoined)
@@ -58,13 +58,13 @@ atcjoined5 <- rename(atcjoined4,
                     no_genre = "No Genre Assigned")
 View(atcjoined5)
 
-# saving data set as csv
+# saving data set as csv for easier import when running code
 #write csv
 write.csv(atcjoined5, "/Users/biancaabreu/Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/\\atacjoin.csv", row.names = FALSE)
 
 
 # IMPORT NEW CREATED DATA SET
-#  IF STARTING FROM THIS POINT
+##  CAN START FROM THIS POINT... IF STARTING FROM THIS POINT
 # packages
 library(dplyr)
 library(tidyr)
@@ -77,15 +77,21 @@ atacjoin <- read_csv("Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/a
 View(atacjoin)
 # ANALYSIS
 
-## BOX PLOT
+## BOX PLOT SUMMARY
+# To explore the data running some box plots to get an idea as to what is there
 
-#Summary
 # valence
 boxplot(atacjoin$valence, col = "purple")
+# avg is between .4-.6 however the data measure fall within .2-.8
+
 # loudness
 boxplot(atacjoin$loudness, col = "red")
+# data measure fall within -10 - 0, avg falls anywhere after -5 and outliers about -12 - -30
+
 # tempo
-boxplot(atacjoin$tempo, col = "black")
+boxplot(atacjoin$tempo, col = "blue")
+# avg between 100 & 150, data measure between 50 - 150
+
 # energy
 boxplot(atacjoin$energy, col = "blue")
 # popularity
