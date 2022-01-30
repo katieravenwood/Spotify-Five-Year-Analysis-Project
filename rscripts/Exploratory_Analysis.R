@@ -323,6 +323,13 @@ summary(lmSTP)
 ggplot(atacjoin, aes(x = track_pop, y = speechiness)) +
   geom_point() + geom_smooth(method=lm, se=FALSE, color = "pink")
 
+# Speechiness ~ Danceability
+lmDS = lm(danceability~speechiness, data = atacjoin) 
+summary(lmDS)
+# plot
+ggplot(atacjoin, aes(x = speechiness, y = danceability)) +
+  geom_point() + geom_smooth(method=lm, se=FALSE, color = "orange")
+
 ## CORRELATION
 library(corrplot)
 library(PerformanceAnalytics)
