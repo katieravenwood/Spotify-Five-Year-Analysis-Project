@@ -102,13 +102,13 @@ with(atacjoin, plot(tempo, instrumentalness, xlab="Tempo", ylab="Instrumentalnes
 
 ## PLOT
 
-# Duration vs. Popularity, dimensions of tempo
+# Duration vs. Track Popularity, dimensions of tempo
 ggplot(atacjoin) +  
   geom_point(mapping = aes(x = duration, y = track_pop, size=tempo), col=I("purple"), alpha=.4) + 
   labs(x = "Duration (mins)", y = "Popularity")
 
 
-# Popularity vs. Danceability, dimensions of valence
+# Track Popularity vs. Danceability, dimensions of valence
 ggplot(atacjoin) +  
   geom_point(mapping = aes(x = track_pop, y = danceability, size=valence), col=I("purple"), alpha=.4) + 
   geom_smooth(mapping = aes(x = track_pop, y = danceability)) + 
@@ -182,7 +182,7 @@ ggplot(data = atacjoin) +
   labs(title = "Artist Popularity & Instrumentalness", 
        x = "Artist Popularity", y = "Intrumentalness")
 
-# Loudness * Instrumentalness
+# Loudness & Instrumentalness
 ggplot(data = atacjoin) +
   geom_point(mapping = aes(x = instrumentalness, y = loudness), col=I("blue"), alpha=.4) +
   geom_smooth(mapping = aes(x = instrumentalness, y = loudness)) +
