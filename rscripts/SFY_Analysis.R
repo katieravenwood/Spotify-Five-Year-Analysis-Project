@@ -158,10 +158,17 @@ ggplot(data = atacjoin) +
 
 # danceability with loudness to cross reference with genre
 ggplot(data = atacjoin) +
-  geom_point(mapping = aes(x = loudness, y = danceability), col=I("black"), alpha=.4) +
+  geom_point(mapping = aes(x = loudness, y = danceability), col=I("pink"), alpha=.4) +
   geom_smooth(mapping = aes(x = loudness, y = danceability)) +
   labs(title = "Loudness vs. Danceabiliy", 
        x = "Loudness", y = "Danceability")
+
+# Valence & loudness
+ggplot(data = atacjoin) +
+  geom_point(mapping = aes(x = valence, y = loudness), col=I("orange"), alpha=.4) +
+  geom_smooth(mapping = aes(x = valence, y = loudness)) +
+  labs(title = "Valence & Loudness", 
+       x = "Valence", y = "Loudness")
 
 # scatter plot expanded on track popularity on valence
 ggplot(data = atacjoin) +
@@ -174,6 +181,13 @@ ggplot(data = atacjoin) +
   geom_point(mapping = aes(x = track_pop, y = valence, size=tempo), col=I("pink"), alpha=.4) +
   labs(title = "Popularity vs. Valence", 
        x = "Popularity", y = "Valence")
+
+# danceability w/ energy sized tempo
+ggplot(data = atacjoin) +
+  geom_point(mapping = aes(x = danceability, y = energy, size=tempo), col=I("orange"), alpha=.4) +
+  geom_smooth(mapping = aes(x = danceability, y = energy)) +
+  labs(title = "Danceability & Energy", 
+       x = "Danceability", y = "Energy")
 
 # Artist Popularity & Instrumentalness
 ggplot(data = atacjoin) +
@@ -217,9 +231,16 @@ ggplot(data = atacjoin) +
 
 # Valence vs. Energy, dimensions of Track Popularity, wrapped by Genre
 ggplot(data = atacjoin) + 
-  geom_point(mapping = aes(x = valence, y = energy, size=track_pop), col=I("purple"), alpha=.4) + 
+  geom_point(mapping = aes(x = valence, y = energy, size=track_pop),col=I("orange"), alpha=.4) + 
   geom_smooth(mapping = aes(x = valence, y = energy)) +
   facet_wrap(~ genre, ncol = 10)
+
+# Loudness vs. Energy, dimensions of Track Popularity, wrapped by Genre
+ggplot(data = atacjoin) + 
+  geom_point(mapping = aes(x = loudness, y = energy, size=track_pop),col=I("red"), alpha=.4) + 
+  geom_smooth(mapping = aes(x = loudness, y = energy)) +
+  facet_wrap(~ genre, ncol = 10)
+
 
 #interested how this looks with track pop & artist pop on valence
 # Artist Pop vs. Track Pop, dimensions of Valence, wrapped by Genre
