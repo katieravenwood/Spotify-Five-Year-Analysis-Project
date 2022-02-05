@@ -88,54 +88,6 @@ boxplot(atacjoin$artist_pop, col = "gold")
 boxplot(atacjoin$artist_follows, col = "red")
 # speechiness
 boxplot(atacjoin$speechiness, col = "purple")
-# boxplot summary: danceability
-boxplot(atacjoin$danceability, col = "blue")
-
-# checking for normal probability
-# valence check
-ggplot(atacjoin, aes(sample = valence)) + geom_qq()
-# energy check
-ggplot(atacjoin, aes(sample = energy)) + geom_qq()
-# loudness
-ggplot(atacjoin, aes(sample = loudness)) + geom_qq()
-# speechiness
-ggplot(atacjoin, aes(sample = speechiness)) + geom_qq()
-
-
-# Cartesian coordinate system
-# Valence & Genre
-ggplot(data = atacjoin, mapping = aes(x = genre, y = valence)) +
-  geom_boxplot()
-ggplot(data = atacjoin, mapping = aes(x = genre, y = valence)) +
-  geom_boxplot()+
-  coord_flip()
-
-# Valence & Energy
-ggplot(data = atacjoin, mapping = aes(x = energy, y = valence)) +
-  geom_boxplot()
-
-# Energy & Genre
-ggplot(data = atacjoin, mapping = aes(x = genre, y = energy)) +
-  geom_boxplot()
-ggplot(data = atacjoin, mapping = aes(x = genre, y = energy)) +
-  geom_boxplot()+
-  coord_flip()
-
-# Energy & Loudness
-ggplot(data = atacjoin, mapping = aes(x = energy, y = loudness)) +
-  geom_boxplot()
-
-# Loudness & Genre
-ggplot(data = atacjoin, mapping = aes(x = genre, y = loudness)) +
-  geom_boxplot()
-ggplot(data = atacjoin, mapping = aes(x = genre, y = loudness)) +
-  geom_boxplot()+
-  coord_flip()
-
-# Valence & Loudness
-ggplot(data = atacjoin, mapping = aes(x = valence, y = loudness)) +
-  geom_boxplot()
-
 
 ## SCATTER PLOTS
 
@@ -148,7 +100,7 @@ with(atacjoin, plot(tempo, danceability, xlab="Tempo", ylab="Danceability"))
 # tempo | instrumentalness
 with(atacjoin, plot(tempo, instrumentalness, xlab="Tempo", ylab="Instrumentalness"))
 
-## PLOTS
+## PLOT
 
 # Duration vs. Track Popularity, dimensions of tempo
 ggplot(atacjoin) +  
@@ -163,18 +115,20 @@ ggplot(atacjoin) +
   labs(x = "Track Popularity", y = "Danceability")
 
 
-# thinking if popularity is common among track pop and artist pop
+# thinking if popularity is common among track and artist
 # Track Popularity vs. Artist Popularity
 ggplot(atacjoin) +  
   geom_point(mapping = aes(x = artist_pop, y = track_pop, col=I("pink"), alpha=.4)) + 
   geom_smooth(mapping = aes(x = artist_pop, y = track_pop)) + 
   labs(x = "Artist Popularity", y = "Track Popularity")
 
+
 #  adding valence as dimension
 ggplot(atacjoin) +  
   geom_point(mapping = aes(x = artist_pop, y = track_pop, size=valence), col=I("pink"), alpha=.4) + 
   geom_smooth(mapping = aes(x = artist_pop, y = track_pop)) + 
   labs(x = "Artist Popularity", y = "Track Popularity")
+
 
 # Valence vs. Loudness, dimensions of danceability
 ggplot(atacjoin) +  
@@ -192,6 +146,9 @@ ggplot(atacjoin) +
 
 # acknowledging the concentration of danceability in the static_vl plot
 # decided to explore that further
+
+# boxplot summary: danceability
+boxplot(atacjoin$danceability, col = "blue")
 
 # to expand danceability join with genre
 ggplot(data = atacjoin) +
@@ -263,16 +220,6 @@ ggplot(data = atacjoin) +
 # Acousticness & Energy
 ggplot(atacjoin, aes(x = acousticness, y = energy)) +
   + geom_point() + geom_smooth(method=lm, se=FALSE, color = "orange")
-
-
-# Still working this plot out
-ggplot(data = atacjoin, mapping = aes(x = energy, y = loudness)) +
-  geom_point(mapping = aes(color = genre)) +
-  geom_smooth(
-    data = filter(atacjoin, class == genre),
-    se = FALSE
-  )
-
 
 ## FACETS
 
