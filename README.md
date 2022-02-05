@@ -1,4 +1,4 @@
-# Spotify x Billboard Five Year Analysis Project
+# Spotify x Billboard Top 20 Albums Five Year Analysis Project
 
 <img src="https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/e16eff25504ca7e63c8d86aaecfc865c4bf5e127/viz/pyplots/ChartAppearanceWordCloudBlack.jpg">
 
@@ -56,12 +56,16 @@ Linear regression and dependent t-tests were used to analyze the correlation bet
 
 #### Data Analysis and Machine Learning Notebook and RScript:
 [Data Analysis and Machine Learning Notebook](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/65a2542ac09d7c534856f8994fbce64e0ed52d98/notebooks/DataAnalysis.ipynb)<br />
-[Data Analysis RScript]
+[Data Analysis RScript]()
 
-## Tableau Visualization and Project Presentation (In Progress)
+## Visualization
+### (Completed 1 February 2022)
+Visualizations were created in Python and R for analyses and models.<br />
 
-Tableau visualizations will be created for selected functions and correlations. <br />
-<br />
-Project will be presented via Zoom to Woz U / Entity faculty and students for internal review on 2 February 2022. 
+## Presentation
+### Presented 2 February 2022)
+Project was presented via Zoom to Woz U / Entity Academy faculty and students for internal review on 2 February 2022. <br />
+View the project presentation video on VIMEO:<br />
+[Good Vibrations? Spotify x Billbiard Top 200 Albums Five-Year Analysis Project](https://vimeo.com/672901078)
 
 
