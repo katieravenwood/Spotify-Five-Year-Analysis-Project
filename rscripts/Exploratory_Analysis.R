@@ -1,12 +1,17 @@
-# import first data data:1
-# set working path
-setwd("~/Documents/GitHub/Spotify-Five-Year-Analysis-Project/data")
+# set working path in rstudio
+# load rstudioapi package
+library("rstudioapi")
+# set working directory to source file location
+setwd(dirname(getActiveDocumentContext()$path))
+# check updated working directory
+getwd()                                               
 
+# import first data data:1
 library(readr)
 MasterChartTableRecoded <- read_csv("MasterChartTableRecoded.csv")
 View(MasterChartTableRecoded)
 # This data set is suitable for any analysis that does not require genre specifications or values
-# This data set will be used to analyze release dates, artists, valence, and etc.
+# This data set will be used to analyze release dates, artists, valence, etc.
 
 # see all column names: 1
 names(MasterChartTableRecoded)
@@ -31,7 +36,7 @@ View(MasterC2)
 str(MasterC2)
 # checking characteristics: 1
 class(MasterC2)
-#can be done all at one with dimension
+#can be done all at once with dimension
 dim(MasterC2)
 
 # mutate to get minutes
@@ -114,7 +119,7 @@ library(gganimate)
 # 3rd data set 
 # importing this data set to use re-coded year column and now added speechiness column
 library(readr)
-AllTracksAndChartsJoined <- read_csv("~/Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/AllTracksAndChartsJoined.csv")
+AllTracksAndChartsJoined <- read_csv("../data/AllTracksAndChartsJoined.csv")
 View(AllTracksAndChartsJoined)
 # rename data set
 atcjoined <- AllTracksAndChartsJoined
@@ -166,7 +171,7 @@ View(atcjoined5)
 
 # saving data set as csv for easier import when running code
 #write csv
-write.csv(atcjoined5, "/Users/biancaabreu/Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/\\atacjoin.csv", row.names = FALSE)
+write.csv(atcjoined5, "../data/atacjoin.csv", row.names = FALSE)
 
 
 # IMPORT NEW CREATED DATA SET
@@ -179,7 +184,7 @@ library(gganimate)
 
 # Data
 library(readr)
-atacjoin <- read_csv("Documents/GitHub/Spotify-Five-Year-Analysis-Project/data/atacjoin.csv")
+atacjoin <- read_csv("../data/atacjoin.csv")
 View(atacjoin)
 # ANALYSIS
 
