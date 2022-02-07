@@ -41,7 +41,7 @@ Data was cleaned and recoded for analysis and machine learning predictions.
 [Wrangling Cleaning and Recoding](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/98de175eefebacf049b39f2e9fc0c55db6dda8a7/notebooks/WranglingCleaningAndRecoding.ipynb)
 
 ## Phase 3: Exploratory Analysis
-### (Completed Completed 17 January 2022)
+### (Completed 17 January 2022)
 
 Exploratory analyses included visualization and standardization of audio feature variables, as well as correlation analysis and plotting.
 
@@ -52,7 +52,7 @@ Exploratory analyses included visualization and standardization of audio feature
 ## Phase 4: Data Analysis and Machine Learning
 ### (Completed 23 January 2022)
 
-Linear regression and dependent t-tests were used to analyze the correlation between several audio features, and the tracks were grouped using the K Means method. Classification of track genres was tested via K Nearest Neighbors and Random Forest algorithms. 
+Linear regression and dependent t-tests were used to analyze the correlation between several audio features and McNemar Chi square was used to determine significant changes in genre presence over the dataset time frame. Tracks were grouped using the K Means method. Classification of track genres was tested via K Nearest Neighbors and Random Forest algorithms. 
 
 #### Data Analysis and Machine Learning Notebook and RScript:
 [Data Analysis and Machine Learning Notebook](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/65a2542ac09d7c534856f8994fbce64e0ed52d98/notebooks/DataAnalysis.ipynb)<br />
@@ -63,9 +63,7 @@ Linear regression and dependent t-tests were used to analyze the correlation bet
 Visualizations were created in Python and R for analyses and models.<br />
 
 ## Presentation
-### Presented 2 February 2022)
-Project was presented via Zoom to Woz U / Entity Academy faculty and students for internal review on 2 February 2022. <br />
+### (Presented 2 February 2022)
+Project was presented via Zoom to Woz U / Entity Academy faculty and students for internal review on 2 February 2022. <br /><br />
 View the project presentation video on VIMEO:<br />
-[Good Vibrations? Spotify x Billbiard Top 200 Albums Five-Year Analysis Project](https://vimeo.com/672901078)
-
-
+[Good Vibrations? Spotify x Billboard Top 200 Albums Five-Year Analysis Project](https://vimeo.com/672901078)
