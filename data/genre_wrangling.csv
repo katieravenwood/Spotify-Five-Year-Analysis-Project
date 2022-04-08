@@ -1,234 +1,234 @@
-,Original_Genre,New Genre
-0,hollywood,Misc
-1,country rock,Rock
-2,k-pop boy group,Pop
-3,deep underground hip hop,Hip-hop
-4,post-grunge,Rock
-5,progressive electro house,Edm
-6,soft rock,Rock
-7,modern hard rock,Rock
-8,kentucky hip hop,Hip-hop
-9,dmv rap,Hip-hop
-10,art rock,Rock
-11,vapor trap,Hip-hop
-12,seattle hip hop,Hip-hop
-13,merseybeat,Pop
-14,detroit hip hop,Hip-hop
-15,jazz rap,Hip-hop
-16,rap conscient,Hip-hop
-17,reggaeton colombiano,Latin
-18,deep classic garage rock,Rock
-19,christian indie,Indie
-20,worship,Christian
-21,kentucky roots,Country
-22,british soul,Soul
-23,nu metal,Metal
-24,ccm,Christian
-25,texas country,Country
-26,jam band,Jazz
-27,atl hip hop,Hip-hop
-28,modern rock,Rock
-29,neo mellow,Pop
-30,nyc rap,Hip-hop
-31,irish singer-songwriter,Folk
-32,talent show,Pop
-33,rock-and-roll,Rock
-34,uk pop,Pop
-35,virginia hip hop,Hip-hop
-36,golden age hip hop,Hip-hop
-37,slap house,Edm
-38,detroit rock,Rock
-39,irish rock,Rock
-40,trap boricua,Latin
-41,canadian country,Country
-42,dfw rap,Hip-hop
-43,modern folk rock,Rock
-44,indietronica,Indie
-45,funk metal,Metal
-46,minneapolis sound,Funk
-47,bedroom pop,Pop
-48,modern alternative rock,Rock
-49,north carolina hip hop,Hip-hop
-50,outlaw country,Country
-51,e,Misc
-52,album rock,Rock
-53,british invasion,Rock
-54,house,Edm
-55,melodic rap,Hip-hop
-56,easy listening,Easy_listening
-57,beatlesque,Pop
-58,alternative r&b,R&B
-59,new jersey rap,Hip-hop
-60,trap latino,Latin
-61,blues rock,Rock
-62,jazz pop,Jazz
-63,plugg,Hip-hop
-64,drill,Hip-hop
-65,birmingham metal,Metal
-66,hip hop,Hip-hop
-67,latin,Latin
-68,australian country,Country
-69,h,Misc
-70,detroit trap,Hip-hop
-71,groove metal,Metal
-72,new orleans rap,Hip-hop
-73,hardcore hip hop,Hip-hop
-74,chicago drill,Hip-hop
-75,baroque pop,Rock
-76,movie tunes,Misc
-77,u,Misc
-78,post-teen pop,Pop
-79,sunshine pop,Pop
-80,pittsburgh rap,Hip-hop
-81,stomp and holler,Pop
-82,w,Misc
-83,canadian trap,Hip-hop
-84,metal,Metal
-85,brostep,Edm
-86,modern blues rock,Rock
-87,heartland rock,Rock
-88,scam rap,Hip-hop
-89,roots reggae,Reggae
-90,funk rock,Rock
-91,modern country rock,Rock
-92,urban contemporary,R&B
-93,classic rock,Rock
-94,europop,Pop
-95,pop soul,Soul
-96,emo,Rock
-97,philly rap,Hip-hop
-98,reggaeton,Latin
-99,barbadian pop,Pop
-100,viral rap,Hip-hop
-101,christian alternative rock,Christian
-102,uk dance,Edm
-103,chicago rap,Hip-hop
-104,grunge,Rock
-105,boy band,Pop
-106,queens hip hop,Hip-hop
-107,soul,Soul
-108,florida rap,Hip-hop
-109,neo soul,Soul
-110,gangster rap,Hip-hop
-111,synth funk,Funk
-112,singer-songwriter,Folk
-113,dirty south rap,Hip-hop
-114,west coast rap,Hip-hop
-115,progressive metal,Metal
-116,pop rock,Rock
-117,toronto rap,Hip-hop
-118,indie rock,Indie
-119,etherpop,Pop
-120,folk-pop,Pop
-121,swamp rock,Rock
-122,yacht rock,Rock
-123,indie pop rap,Indie
-124,country pop,Pop
-125,minnesota hip hop,Hip-hop
-126,swedish pop,Pop
-127,lgbtq+ hip hop,Hip-hop
-128,mississippi hip hop,Hip-hop
-129,art pop,Pop
-130,australian pop,Pop
-131,southern hip hop,Hip-hop
-132,emo rap,Hip-hop
-133,garage rock,Rock
-134,dance pop,Pop
-135,bedroom soul,Soul
-136,pop dance,Pop
-137,metropopolis,Pop
-138,redneck,Country
-139,roots rock,Rock
-140,australian rock,Rock
-141,christian music,Christian
-142,funk,Funk
-143,s,Misc
-144,o,Misc
-145,a cappella,Misc
-146,hawaiian hip hop,Hip-hop
-147,indie poptimism,Indie
-148,miami hip hop,Hip-hop
-149,nz pop,Pop
-150,show tunes,Show_tunes
-151,lounge,Pop
-152,permanent wave,Metal
-153,arkansas hip hop,Hip-hop
-154,escape room,Pop
-155,country,Country
-156,glam rock,Rock
-157,brill building pop,Pop
-158,reggae,Reggae
-159,pop rap,Hip-hop
-160,rap,Hip-hop
-161,k-pop,Pop
-162,brooklyn drill,Hip-hop
-163,g funk,Hip-hop
-164,viral pop,Pop
-165,shiver pop,Pop
-166,pop r&b,R&B
-167,baton rouge rap,Hip-hop
-168,canadian hip hop,Hip-hop
-169,black americana,Misc
-170,oklahoma country,Country
-171,alternative hip hop,Hip-hop
-172,southern rock,Rock
-173,contemporary country,Country
-174,hip pop,Hip-hop
-175,trap queen,Hip-hop
-176,adult standards,Easy_listening
-177,hard rock,Rock
-178,tennessee hip hop,Hip-hop
-179,folk rock,Rock
-180,old school thrash,Metal
-181,alternative rock,Rock
-182,t,Misc
-183,gauze pop,Pop
-184,progressive rock,Rock
-185,reggaeton flow,Latin
-186,tropical house,Edm
-187,thrash metal,Metal
-188,r&b,R&B
-189,rap metal,Metal
-190,pop,Pop
-191,atl trap,Hip-hop
-192,east coast hip hop,Hip-hop
-193,new wave pop,Pop
-194,rock,Rock
-195,progressive house,Edm
-196,electro house,Edm
-197,electropop,Pop
-198,mellow gold,Indie
-199,glam metal,Metal
-200,australian dance,Edm
-201,ohio hip hop,Hip-hop
-202,sheffield indie,Indie
-203,memphis hip hop,Hip-hop
-204,puerto rican pop,Latin
-205,uk americana,Country
-206,country dawn,Country
-207,oakland hip hop,Hip-hop
-208,trap,Hip-hop
-209,piano rock,Rock
-210,comic,Misc
-211,canadian pop,Pop
-212,k-pop girl group,Pop
-213,kentucky indie,Indie
-214,country road,Country
-215,alt z,Pop
-216,jazz trio,Jazz
-217,conscious hip hop,Hip-hop
-218,underground hip hop,Hip-hop
-219,canadian rock,Rock
-220, ,Misc
-221,cali rap,Hip-hop
-222,indie pop,Indie
-223,uk contemporary r&b,R&B
-224,alternative metal,Metal
-225,electronic trap,Edm
-226,edm,Edm
-227,rockabilly,Rock
-228,australian hip hop,Hip-hop
-229,houston rap,Hip-hop
-230,psychedelic rock,Rock
-231,n,Misc
-232,canadian contemporary r&b,R&B
+Original_Genre,New Genre
+hollywood,Misc
+country rock,Rock
+k-pop boy group,Pop
+deep underground hip hop,Hip-hop
+post-grunge,Rock
+progressive electro house,Edm
+soft rock,Rock
+modern hard rock,Rock
+kentucky hip hop,Hip-hop
+dmv rap,Hip-hop
+art rock,Rock
+vapor trap,Hip-hop
+seattle hip hop,Hip-hop
+merseybeat,Pop
+detroit hip hop,Hip-hop
+jazz rap,Hip-hop
+rap conscient,Hip-hop
+reggaeton colombiano,Latin
+deep classic garage rock,Rock
+christian indie,Indie
+worship,Christian
+kentucky roots,Country
+british soul,Soul
+nu metal,Metal
+ccm,Christian
+texas country,Country
+jam band,Jazz
+atl hip hop,Hip-hop
+modern rock,Rock
+neo mellow,Pop
+nyc rap,Hip-hop
+irish singer-songwriter,Folk
+talent show,Pop
+rock-and-roll,Rock
+uk pop,Pop
+virginia hip hop,Hip-hop
+golden age hip hop,Hip-hop
+slap house,Edm
+detroit rock,Rock
+irish rock,Rock
+trap boricua,Latin
+canadian country,Country
+dfw rap,Hip-hop
+modern folk rock,Rock
+indietronica,Indie
+funk metal,Metal
+minneapolis sound,Funk
+bedroom pop,Pop
+modern alternative rock,Rock
+north carolina hip hop,Hip-hop
+outlaw country,Country
+e,Misc
+album rock,Rock
+british invasion,Rock
+house,Edm
+melodic rap,Hip-hop
+easy listening,Easy_listening
+beatlesque,Pop
+alternative r&b,R&B
+new jersey rap,Hip-hop
+trap latino,Latin
+blues rock,Rock
+jazz pop,Jazz
+plugg,Hip-hop
+drill,Hip-hop
+birmingham metal,Metal
+hip hop,Hip-hop
+latin,Latin
+australian country,Country
+h,Misc
+detroit trap,Hip-hop
+groove metal,Metal
+new orleans rap,Hip-hop
+hardcore hip hop,Hip-hop
+chicago drill,Hip-hop
+baroque pop,Rock
+movie tunes,Misc
+u,Misc
+post-teen pop,Pop
+sunshine pop,Pop
+pittsburgh rap,Hip-hop
+stomp and holler,Pop
+w,Misc
+canadian trap,Hip-hop
+metal,Metal
+brostep,Edm
+modern blues rock,Rock
+heartland rock,Rock
+scam rap,Hip-hop
+roots reggae,Reggae
+funk rock,Rock
+modern country rock,Rock
+urban contemporary,R&B
+classic rock,Rock
+europop,Pop
+pop soul,Soul
+emo,Rock
+philly rap,Hip-hop
+reggaeton,Latin
+barbadian pop,Pop
+viral rap,Hip-hop
+christian alternative rock,Christian
+uk dance,Edm
+chicago rap,Hip-hop
+grunge,Rock
+boy band,Pop
+queens hip hop,Hip-hop
+soul,Soul
+florida rap,Hip-hop
+neo soul,Soul
+gangster rap,Hip-hop
+synth funk,Funk
+singer-songwriter,Folk
+dirty south rap,Hip-hop
+west coast rap,Hip-hop
+progressive metal,Metal
+pop rock,Rock
+toronto rap,Hip-hop
+indie rock,Indie
+etherpop,Pop
+folk-pop,Pop
+swamp rock,Rock
+yacht rock,Rock
+indie pop rap,Indie
+country pop,Pop
+minnesota hip hop,Hip-hop
+swedish pop,Pop
+lgbtq+ hip hop,Hip-hop
+mississippi hip hop,Hip-hop
+art pop,Pop
+australian pop,Pop
+southern hip hop,Hip-hop
+emo rap,Hip-hop
+garage rock,Rock
+dance pop,Pop
+bedroom soul,Soul
+pop dance,Pop
+metropopolis,Pop
+redneck,Country
+roots rock,Rock
+australian rock,Rock
+christian music,Christian
+funk,Funk
+s,Misc
+o,Misc
+a cappella,Misc
+hawaiian hip hop,Hip-hop
+indie poptimism,Indie
+miami hip hop,Hip-hop
+nz pop,Pop
+show tunes,Show_tunes
+lounge,Pop
+permanent wave,Metal
+arkansas hip hop,Hip-hop
+escape room,Pop
+country,Country
+glam rock,Rock
+brill building pop,Pop
+reggae,Reggae
+pop rap,Hip-hop
+rap,Hip-hop
+k-pop,Pop
+brooklyn drill,Hip-hop
+g funk,Hip-hop
+viral pop,Pop
+shiver pop,Pop
+pop r&b,R&B
+baton rouge rap,Hip-hop
+canadian hip hop,Hip-hop
+black americana,Misc
+oklahoma country,Country
+alternative hip hop,Hip-hop
+southern rock,Rock
+contemporary country,Country
+hip pop,Hip-hop
+trap queen,Hip-hop
+adult standards,Easy_listening
+hard rock,Rock
+tennessee hip hop,Hip-hop
+folk rock,Rock
+old school thrash,Metal
+alternative rock,Rock
+t,Misc
+gauze pop,Pop
+progressive rock,Rock
+reggaeton flow,Latin
+tropical house,Edm
+thrash metal,Metal
+r&b,R&B
+rap metal,Metal
+pop,Pop
+atl trap,Hip-hop
+east coast hip hop,Hip-hop
+new wave pop,Pop
+rock,Rock
+progressive house,Edm
+electro house,Edm
+electropop,Pop
+mellow gold,Indie
+glam metal,Metal
+australian dance,Edm
+ohio hip hop,Hip-hop
+sheffield indie,Indie
+memphis hip hop,Hip-hop
+puerto rican pop,Latin
+uk americana,Country
+country dawn,Country
+oakland hip hop,Hip-hop
+trap,Hip-hop
+piano rock,Rock
+comic,Misc
+canadian pop,Pop
+k-pop girl group,Pop
+kentucky indie,Indie
+country road,Country
+alt z,Pop
+jazz trio,Jazz
+conscious hip hop,Hip-hop
+underground hip hop,Hip-hop
+canadian rock,Rock
+ ,Misc
+cali rap,Hip-hop
+indie pop,Indie
+uk contemporary r&b,R&B
+alternative metal,Metal
+electronic trap,Edm
+edm,Edm
+rockabilly,Rock
+australian hip hop,Hip-hop
+houston rap,Hip-hop
+psychedelic rock,Rock
+n,Misc
+canadian contemporary r&b,R&B
