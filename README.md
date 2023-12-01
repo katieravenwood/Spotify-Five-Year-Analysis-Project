@@ -29,8 +29,8 @@ The dataset was created via Python using Spotify's public API and playlists crea
 - Audio features
 
 #### Dataset creation notebooks:
-[Master Chart Table Creation](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/main/notebooks/Master_Chart_Table_Creation.ipynb)<br />
-[All Album Track Table Creation](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/main/notebooks/All_Album_Track_Table_Creation.ipynb)
+[Master Chart Table Creation](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/16003b3c51f5e54e24cd38daf039160d22e6e17e/notebooks/MasterChartTableCreation.ipynb)<br />
+[All Album Track Table Creation](https://github.com/katieravenwood/Spotify-Five-Year-Analysis-Project/blob/16003b3c51f5e54e24cd38daf039160d22e6e17e/notebooks/AllAlbumTrackTableCreation.ipynb)
 
 ## Phase 2: Data Wrangling, Cleaning and Recoding
 ### (Completed 11 January 2022)
